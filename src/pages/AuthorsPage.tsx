@@ -3,7 +3,7 @@ import React from 'react';
 const steps = [
   { num: "01", title: "Prepare Manuscript", desc: "Follow our style guide. Use APA 7th edition citations. Maximum 8,000 words for full articles, 4,000 for research notes." },
   { num: "02", title: "Anonymise for Review", desc: "Remove all identifying information (name, institution, acknowledgements) from the manuscript file for double-blind peer review." },
-  { num: "03", title: "Submit Online", desc: "Upload your manuscript via our submission form. Include a structured abstract (250–300 words), 5–8 keywords, and a cover letter." },
+  { num: "03", title: "Submit Manuscript", desc: "Submit your manuscript files along with a cover letter directly to our editorial team via email or our contact channel." },
   { num: "04", title: "Peer Review", desc: "Your paper will be reviewed by two independent subject experts. The editorial team will send you a decision within 6–8 weeks." },
   { num: "05", title: "Revision & Decision", desc: "Address reviewer comments systematically. A point-by-point response letter is required. Final decisions communicated within 2 weeks of revision." },
   { num: "06", title: "Publication", desc: "Accepted articles receive a DOI, are copy-edited, typeset, and published open-access within 4 weeks of final acceptance." },

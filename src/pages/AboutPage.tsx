@@ -61,7 +61,6 @@ export default function AboutPage() {
             </div>
 
             <div className="about-mission-block">
-              <div className="about-mission-icon">✦</div>
               <h3>Our Mission</h3>
               <p>
                 This journal attempts to bring to academic focus the identity of the Malankara Church and

@@ -9,28 +9,8 @@ function Navbar() {
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
-
-    // Intersection Observer for reveal animations
-    const observerOptions = {
-      threshold: 0.15,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    const revealElements = document.querySelectorAll('.reveal');
-    revealElements.forEach(el => observer.observe(el));
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      revealElements.forEach(el => observer.unobserve(el));
     };
   }, []);
 
@@ -54,13 +34,13 @@ function Navbar() {
           <Link to="/about" className={active('/about')} onClick={() => setMobileMenuOpen(false)}>About Us</Link>
           <Link to="/journals" onClick={() => setMobileMenuOpen(false)}>Journals</Link>
           <Link to="/browse" onClick={() => setMobileMenuOpen(false)}>Browse Articles</Link>
-          <Link to="/submit" onClick={() => setMobileMenuOpen(false)}>Submit Paper</Link>
+          <Link to="/news" className={active('/news')} onClick={() => setMobileMenuOpen(false)}>News</Link>
           <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>Contact Us</Link>
         </div>
 
         <div className="nav-actions">
-          <Link to="/subscribe" className="btn btn-primary nav-subscribe-btn">
-            Subscribe
+          <Link to="/contact" className="btn btn-primary nav-subscribe-btn">
+            Contact Us
           </Link>
           <button 
             className={`mobile-menu-toggle ${mobileMenuOpen ? 'active' : ''}`}
@@ -101,7 +81,6 @@ function Footer() {
             <ul>
               <li><Link to="/journals">All Journals</Link></li>
               <li><Link to="/browse">Browse Articles</Link></li>
-              <li><Link to="/submit">Submit Paper</Link></li>
             </ul>
           </div>
           <div className="footer-links">
@@ -109,20 +88,19 @@ function Footer() {
             <ul>
               <li><Link to="/authors">Instructions</Link></li>
               <li><Link to="/ethics">Ethics</Link></li>
-              <li><Link to="/editorial-board">Board</Link></li>
+              <li><Link to="/news">News &amp; Updates</Link></li>
             </ul>
           </div>
           <div className="footer-links">
             <h4>Support</h4>
             <ul>
-              <li><Link to="/contact">Contact</Link></li>
-              <li><Link to="/subscribe">Subscription</Link></li>
+              <li><Link to="/contact">Contact Us</Link></li>
               <li><Link to="/about">About Us</Link></li>
             </ul>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>© 2024 SISC Research Group. All rights reserved.</p>
+          <p>© 2026 SISC Research Group. All rights reserved.</p>
         </div>
       </div>
     </footer>
@@ -134,6 +112,31 @@ export default function Layout() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Setup intersection observer for reveal animations on the newly loaded route page
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    const timer = setTimeout(() => {
+      const revealElements = document.querySelectorAll('.reveal');
+      revealElements.forEach(el => observer.observe(el));
+    }, 100);
+
+    return () => {
+      clearTimeout(timer);
+      observer.disconnect();
+    };
   }, [pathname]);
 
   return (
