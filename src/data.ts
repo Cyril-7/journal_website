@@ -14,6 +14,14 @@ export interface Article {
   author: string;
   affiliation?: string;
   date: string;
+  // Bibliographic fields required by ISSN India guidelines
+  volume?: number;
+  issueNumber?: number;
+  month?: string;
+  year?: number;
+  pageStart?: number;
+  pageEnd?: number;
+  pdfUrl?: string;
   image: string;
   abstract?: string;
   sections?: ArticleSection[];
@@ -38,38 +46,6 @@ export interface Journal {
   issn: string;
   editor: string;
   frequency: string;
-  impactFactor: string;
 }
 
-export const journals: Journal[] = [
-  { 
-    title: "Indo-Semitic Studies", 
-    issues: 14, 
-    focus: "Historical & Theological Research",
-    image: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&q=80&w=800",
-    issn: "2831-402X",
-    editor: "Prof. Dr. Joseph Mar Thomas",
-    frequency: "Semi-Annually",
-    impactFactor: "2.14"
-  },
-  { 
-    title: "Malankara Heritage Review", 
-    issues: 8, 
-    focus: "Church Identity & Cultural Evolution",
-    image: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80&w=800",
-    issn: "2831-4011",
-    editor: "Dr. Anna Kurian",
-    frequency: "Annually",
-    impactFactor: "1.85"
-  },
-  { 
-    title: "Asian Christianity Quarterly", 
-    issues: 22, 
-    focus: "Comparative Religion & Eastern Rites",
-    image: "https://images.unsplash.com/photo-1461360370896-922624d12aa1?auto=format&fit=crop&q=80&w=800",
-    issn: "2831-4038",
-    editor: "Rev. Dr. Geevarghese Gregory",
-    frequency: "Quarterly",
-    impactFactor: "3.02"
-  }
-];
+export const journals: Journal[] = [];

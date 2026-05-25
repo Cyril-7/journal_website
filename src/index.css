@@ -1800,6 +1800,314 @@ footer {
   border: 1px solid var(--border-subtle);
 }
 
+
+/* ==================== CONTACT PAGE ==================== */
+.contact-page-header {
+  padding: 5rem 0 3rem;
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-mid);
+  text-align: center;
+}
+
+.contact-page-title {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.contact-page-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 650px;
+  margin: 0.85rem auto 0;
+  line-height: 1.6;
+}
+
+.contact-page-section {
+  background: #ffffff;
+  padding: 4rem 0;
+}
+
+.contact-container {
+  max-width: 880px;
+}
+
+.contact-issn-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  padding: 1rem 1.5rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+  border-radius: var(--border-radius);
+}
+
+.contact-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.contact-section-block {
+  border-bottom: 1px solid var(--border-mid);
+  padding-bottom: 2rem;
+}
+
+.contact-section-block--last {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.contact-section-heading {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  margin-bottom: 1.25rem;
+}
+
+.contact-section-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Definition list used as two-column label/value grid */
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 0.6rem 1.5rem;
+  font-size: 0.95rem;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-info-grid dt {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.contact-info-grid dd {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.contact-email {
+  font-family: monospace;
+  color: var(--accent-secondary) !important;
+}
+
+.contact-callout {
+  margin-top: 4rem;
+  padding: 2rem;
+  border: 1px solid var(--border-mid);
+  background: var(--bg-surface);
+  border-radius: var(--border-radius);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.contact-callout-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* ==================== ARTICLE DETAIL PAGE ==================== */
+/* Two-column layout: main content + narrow sidebar */
+.article-detail-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* Abstract block with symmetric horizontal indent */
+.article-abstract-block {
+  margin: 0 2.5rem 3.5rem 2.5rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border-mid);
+  border-bottom: 1px solid var(--border-mid);
+}
+
+/* Article title — scales down smoothly on small screens */
+.article-detail-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+/* Comment form two-column input row */
+.article-comment-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Article detail sidebar */
+.article-detail-sidebar {
+  border-left: 1px solid var(--border-mid);
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ==================== ARCHIVE PAGE ==================== */
+.archive-banner {
+  background: linear-gradient(135deg, #0d1b2a 0%, #1a2d3f 100%);
+  padding: 5.5rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.archive-banner-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.archive-stats-row {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.archive-compliance-bar {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 0.9rem 0;
+}
+
+.archive-compliance-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+}
+
+/* Issue header button flex layout */
+.archive-issue-header-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* TOC row: title left, action buttons right */
+.archive-toc-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.archive-toc-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+
+/* ==================== AUTHORS PAGE ==================== */
+.authors-policy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+/* ==================== BROWSE PAGE ==================== */
+.browse-banner {
+  background: linear-gradient(160deg, #0d1b2a 0%, #1c2e42 60%, #253446 100%);
+  padding: 7rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.browse-results-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.browse-article-row-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* ==================== EDITORIAL BOARD PAGE ==================== */
+/* Lower min-width so cards fit single-column on phones */
+.board-grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+/* ==================== JOURNALS PAGE ==================== */
+.journals-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+
+.journals-policy-callout {
+  margin-top: 5rem;
+  padding: 3rem;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-mid);
+  border-left: 5px solid var(--accent-primary);
+  border-radius: var(--border-radius);
+}
+
+.journals-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* ==================== NEWS PAGE ==================== */
+.news-grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 1200px) {
   .container { padding: 0 1.5rem; }
@@ -2057,6 +2365,148 @@ footer {
     grid-template-columns: 1fr !important;
     gap: 1.25rem !important;
   }
+
+  /* ---- Contact Page Mobile ---- */
+  .contact-page-header {
+    padding: 3.5rem 0 2rem;
+  }
+
+  .contact-page-title {
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+    line-height: 1.2;
+  }
+
+  .contact-page-section {
+    padding: 2.5rem 0;
+  }
+
+  .contact-issn-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    padding: 1rem 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-sections {
+    gap: 2rem;
+  }
+
+  .contact-section-heading {
+    font-size: 1.2rem;
+  }
+
+  /* Switch info grid to stacked label-above-value layout */
+  .contact-info-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .contact-info-grid dt {
+    margin-top: 0.9rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+  }
+
+  .contact-info-grid dt:first-child {
+    margin-top: 0;
+  }
+
+  .contact-info-grid dd {
+    font-size: 0.95rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dotted var(--border-subtle);
+  }
+
+  .contact-info-grid dd:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .contact-callout {
+    margin-top: 2.5rem;
+    padding: 1.5rem 1.25rem;
+  }
+
+  /* ---- Article Detail Page Mobile ---- */
+  .article-detail-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .article-abstract-block {
+    margin: 0 0 2.5rem 0;
+  }
+
+  .article-comment-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .article-detail-sidebar {
+    border-left: none;
+    border-top: 1px solid var(--border-mid);
+    padding-left: 0;
+    padding-top: 2rem;
+  }
+
+  /* ---- Archive Page Mobile ---- */
+  .archive-banner {
+    padding: 3.5rem 0 2.5rem;
+  }
+
+  .archive-stats-row {
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  .archive-toc-row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .archive-toc-actions {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  /* ---- Authors Page Mobile ---- */
+  .authors-policy-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ---- Browse Page Mobile ---- */
+  .browse-banner {
+    padding: 4rem 0 2.5rem;
+  }
+
+  /* ---- Editorial Board Mobile ---- */
+  .board-grid-auto {
+    grid-template-columns: 1fr;
+  }
+
+  /* ---- Journals Page Mobile ---- */
+  .journals-policy-callout {
+    padding: 2rem 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .journals-catalog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .journals-cta-row .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* ---- News Page Mobile ---- */
+  .news-grid-auto {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 600px) {
@@ -2070,6 +2520,12 @@ footer {
   .steps-grid { grid-template-columns: 1fr; }
   .news-grid { grid-template-columns: 1fr; }
   .browse-bar { flex-direction: column; }
+  /* Reinforce single-column for extra-small phones */
+  .board-grid-auto { grid-template-columns: 1fr; }
+  .news-grid-auto { grid-template-columns: 1fr; }
+  .journals-catalog-grid { grid-template-columns: 1fr; }
+  .authors-policy-grid { grid-template-columns: 1fr; }
+  .article-comment-form-grid { grid-template-columns: 1fr; }
 }
 
 /* ==================== ACADEMIC PDF PRINT MEDIA STYLES ==================== */

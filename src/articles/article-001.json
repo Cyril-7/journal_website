@@ -1,0 +1,53 @@
+{
+  "id": 1,
+  "title": "The West Syriac Anaphora in the Malankara Context: Liturgical Identity and Theological Adaptation",
+  "excerpt": "This paper examines the reception and adaptation of the West Syriac anaphoral tradition within the Malankara Church, tracing how indigenous theological concerns shaped the liturgical self-understanding of the community across centuries of reform and resistance.",
+  "category": "Liturgical Studies",
+  "author": "Fr. Aaron Joshua John",
+  "affiliation": "Department of Liturgical Theology, Orthodox Theological Seminary, Kottayam",
+  "date": "January 2026",
+  "volume": 1,
+  "issueNumber": 1,
+  "month": "January",
+  "year": 2026,
+  "pageStart": 1,
+  "pageEnd": 18,
+  "doi": "10.5281/sisc.2026.001",
+  "image": "https://images.unsplash.com/photo-1585314614250-d213672a5a3b?auto=format&fit=crop&q=80&w=800",
+  "abstract": "The Malankara Church's adoption of the West Syriac anaphoral tradition in the seventeenth century represents one of the most significant liturgical transitions in Asian Christian history. This paper investigates how the community negotiated the theological grammar of the Syriac rite — rooted in the Antiochene tradition — against the backdrop of an Indian ecclesial consciousness shaped by the Thomasine heritage. Drawing on manuscript sources from the Mor Gregorios Collection, Kottayam, and comparative analysis of the Anaphora of St. James with extant pre-Diamper liturgical fragments, the paper argues that the Malankara reception was not passive imitation but a dynamic recontextualisation. The doxological, eschatological, and epicletic structures of the adopted liturgy were subtly inflected with indigenous theological sensibilities, producing a distinctive liturgical synthesis that remains understudied in the scholarship on Oriental Christianity.",
+  "sections": [
+    {
+      "title": "1. Introduction: The Liturgical Turn in Malankara Historiography",
+      "body": "Scholarly attention to the Malankara Church has long been dominated by questions of ecclesial polity and apostolic succession. Liturgical history, by contrast, has occupied a peripheral role in the historiographical imagination. This paper argues that the liturgy — specifically the anaphora — constitutes a primary theological document that encodes the community's self-understanding in ways that conciliar decrees and synodal minutes do not. The adoption of the West Syriac rite after the Coonan Cross Oath of 1653 and the subsequent consecration of Mar Gregorios of Jerusalem mark the beginning of a liturgical transformation whose full theological implications have not yet been adequately explored."
+    },
+    {
+      "title": "2. The Antiochene Anaphoral Grammar and Its Theological Presuppositions",
+      "body": "The Anaphora of St. James, the foundational eucharistic prayer of the West Syriac tradition, carries within its structure a distinctive theological logic shaped by Antiochene Christology and the mystagogical tradition of the School of Antioch. Its tripartite movement — from the Sanctus through the narrative of institution to the epiclesis — presupposes a theology of divine condescension and communal participation that is characteristically Syriac. The paper analyses key doxological passages in the Syriac original and compares them with the Malayalam translations used in Malankara practice, identifying both faithful renderings and significant theological interpolations."
+    },
+    {
+      "title": "3. Pre-Diamper Liturgical Memory and the Problem of Continuity",
+      "body": "One of the central challenges in reconstructing Malankara liturgical history is the near-total absence of pre-Diamper liturgical manuscripts in the Kerala context. The Synod of Diamper (1599) systematically destroyed a vast corpus of liturgical and theological texts. However, fragments preserved in the colophons of later manuscripts, together with early European missionary accounts, permit partial reconstruction of the pre-Diamper anaphoral tradition. This section examines these fragments in dialogue with East Syriac comparative material to hypothesise the contours of the liturgical tradition that West Syriac practice displaced and, in certain respects, preserved."
+    },
+    {
+      "title": "4. Recontextualisation as Theology: Evidence from the Mor Gregorios Manuscripts",
+      "body": "The Mor Gregorios Collection at the Orthodox Theological Seminary, Kottayam, contains a significant body of eighteenth- and nineteenth-century liturgical manuscripts that have not been fully catalogued or analysed. Preliminary examination of selected anaphoral texts reveals consistent patterns of theological interpolation: the insertion of Thomasine formulae into the commemorative sections of the anaphora, modifications to the intercessory prayers that reflect the community's Indian social location, and expansions of the epicletic section that suggest a pneumatology shaped as much by Indian devotional practice as by formal Syriac theology. These interpolations are not mere accidents of translation but deliberate theological choices that repay careful analysis."
+    },
+    {
+      "title": "5. Conclusion: Towards a Liturgical Theology of the Malankara Church",
+      "body": "The West Syriac anaphoral tradition, as received and adapted in the Malankara context, constitutes a rich theological resource that has been insufficiently appreciated by both liturgical scholars and historians of Indian Christianity. This paper has argued that the Malankara reception of the Antiochene anaphora was a creative theological act — one that preserved the structural integrity of the Syriac tradition while inflecting it with distinctively Indian theological concerns. Further work on the Mor Gregorios manuscripts, combined with comparative study of contemporaneous developments in other Oriental churches, promises to illuminate the liturgical dimensions of the Malankara Church's remarkable historical identity."
+    }
+  ],
+  "references": [
+    "Brock, S. P. (1979). 'The Anaphora of the Apostles: Traditions of Authorship.' Ephemerides Liturgicae, 93, 515–549.",
+    "Fenwick, J. R. K. (1992). The Anaphoras of St Basil and St James: An Investigation into their Common Origin. Orientalia Christiana Analecta 240. Rome: Pontificio Istituto Orientale.",
+    "Mathew, C. P., & Thomas, M. M. (1967). The Indian Churches of Saint Thomas. Delhi: ISPCK.",
+    "Mundadan, A. M. (1984). History of Christianity in India, Vol. I: From the Beginning up to the Middle of the Sixteenth Century. Bangalore: Theological Publications in India.",
+    "Puthiyakunnel, T. (2006). The Thomas Christians and the Syriac Liturgical Tradition. Kottayam: Oriental Institute of Religious Studies.",
+    "Taft, R. F. (1992). The Liturgy of the Hours in East and West. 2nd ed. Collegeville: Liturgical Press.",
+    "Varghese, B. (2004). The Syriac Version of the Liturgy of St James: A Brief History for Students. Cambridge: Grove Books."
+  ],
+  "tags": ["Liturgical Studies", "West Syriac", "Anaphora", "Malankara Church", "St. James", "Thomasine Heritage"],
+  "views": 0,
+  "downloads": 0,
+  "citations": 0
+}

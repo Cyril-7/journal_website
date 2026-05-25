@@ -36,12 +36,7 @@ export default function BrowsePage() {
   return (
     <>
       {/* Dark banner with integrated search bar */}
-      <div style={{
-        background: 'linear-gradient(160deg, #0d1b2a 0%, #1c2e42 60%, #253446 100%)',
-        padding: '7rem 0 4rem',
-        position: 'relative',
-        overflow: 'hidden'
-      }}>
+      <div className="browse-banner">
         {/* Decorative radial blobs */}
         <div style={{ position: 'absolute', top: '-80px', right: '-80px', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(176,58,46,0.15) 0%, transparent 70%)', borderRadius: '50%', pointerEvents: 'none' }} />
         <div style={{ position: 'absolute', bottom: '-60px', left: '-40px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(154,122,46,0.1) 0%, transparent 70%)', borderRadius: '50%', pointerEvents: 'none' }} />
@@ -164,7 +159,7 @@ export default function BrowsePage() {
           </div>
 
           {/* Results count bar */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem', paddingBottom: '1rem', borderBottom: '1px solid var(--border-subtle)' }}>
+          <div className="browse-results-bar">
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
               <span style={{
                 background: filtered.length > 0 ? 'var(--accent-primary-soft)' : 'var(--bg-elevated)',
@@ -219,7 +214,7 @@ export default function BrowsePage() {
                   borderRadius: '14px', padding: '2rem', boxShadow: '0 2px 8px rgba(13,27,42,0.02)',
                   transition: 'var(--transition-smooth)'
                 }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+                  <div className="browse-article-row-header">
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                       <span className="card-meta" style={{ fontSize: '0.75rem', padding: '0.25rem 0.65rem' }}>{a.category}</span>
                       {a.doi && <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontFamily: 'monospace' }}>DOI: {a.doi}</span>}

@@ -58,7 +58,7 @@ export default function JournalsPage() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '2.5rem' }}>
+          <div className="journals-catalog-grid">
             {journals.map((j, i) => (
               <div key={i} style={{
                 background: '#ffffff',
@@ -109,26 +109,7 @@ export default function JournalsPage() {
                       {j.title}
                     </h3>
                   </div>
-                  {/* Impact Factor floating badge */}
-                  <div style={{
-                    position: 'absolute',
-                    top: '1.25rem',
-                    right: '1.5rem',
-                    background: 'var(--accent-secondary)',
-                    color: '#ffffff',
-                    padding: '0.4rem 0.8rem',
-                    borderRadius: 'var(--border-radius)',
-                    fontSize: '0.8rem',
-                    fontWeight: 700,
-                    boxShadow: '0 4px 10px rgba(0,0,0,0.15)',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    lineHeight: '1'
-                  }}>
-                    <span style={{ fontSize: '0.55rem', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '2px', opacity: 0.85 }}>Impact</span>
-                    {j.impactFactor}
-                  </div>
+                
                 </div>
 
                 {/* Journal Info Body */}
@@ -174,21 +155,14 @@ export default function JournalsPage() {
           </div>
 
           {/* Scope and Policies */}
-          <div style={{ 
-            marginTop: '5rem', 
-            padding: '3rem',
-            background: 'var(--bg-surface)',
-            border: '1.5px solid var(--border-mid)',
-            borderLeft: '5px solid var(--accent-primary)',
-            borderRadius: 'var(--border-radius)'
-          }}>
+          <div className="journals-policy-callout">
             <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', color: 'var(--text-primary)', marginBottom: '1rem' }}>
               Academic Rigor & Ethical Standards
             </h3>
             <p style={{ fontSize: '1.02rem', color: 'var(--text-secondary)', lineHeight: '1.8', maxWidth: '900px' }}>
               All SISC journals operate under strict adherence to the Committee on Publication Ethics (COPE) guidelines. Our universal double-blind peer-review system ensures complete anonymity between authors and reviewers, maintaining the highest levels of scholastic objectivity and intellectual integrity. 
             </p>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', marginTop: '2rem' }}>
+            <div className="journals-cta-row">
               <Link to="/ethics" className="btn btn-outline" style={{ background: '#ffffff', borderColor: 'var(--border-mid)', color: 'var(--text-primary)', padding: '0.6rem 1.5rem', borderRadius: 'var(--border-radius)' }}>
                 Review Ethics Statement
               </Link>

@@ -8,7 +8,6 @@ function Hero() {
       <div className="hero-bg"></div>
       <div className="container">
         <div className="hero-content fade-in">
-          <span className="hero-tag">Featured Research Portal</span>
           <h1>Advancing Scholarship on Indo-Semitic Christianity</h1>
           <p>
             SISC Academic Press brings you peer-reviewed discoveries on the Malankara Church,

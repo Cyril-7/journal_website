@@ -33,6 +33,8 @@ function Navbar() {
           <Link to="/" className={active('/')} onClick={() => setMobileMenuOpen(false)}>Home</Link>
           <Link to="/about" className={active('/about')} onClick={() => setMobileMenuOpen(false)}>About Us</Link>
           <Link to="/journals" onClick={() => setMobileMenuOpen(false)}>Journals</Link>
+          <Link to="/editorial-board" className={active('/editorial-board')} onClick={() => setMobileMenuOpen(false)}>Editorial Board</Link>
+          <Link to="/archive" className={active('/archive')} onClick={() => setMobileMenuOpen(false)}>Issues &amp; Archives</Link>
           <Link to="/browse" onClick={() => setMobileMenuOpen(false)}>Browse Articles</Link>
           <Link to="/news" className={active('/news')} onClick={() => setMobileMenuOpen(false)}>News</Link>
           <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>Contact Us</Link>
@@ -72,14 +74,16 @@ function Footer() {
               and Asian Christian heritage. Peer-reviewed. Open-access.
             </p>
             <p style={{ marginTop: '1rem', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-              E-ISSN <span style={{ color: 'var(--accent-secondary)' }}>2831-402X</span> &nbsp; | &nbsp; 
-              P-ISSN <span style={{ color: 'var(--accent-secondary)' }}>2831-4011</span>
+              E-ISSN <span style={{ color: 'var(--accent-secondary)' }}>Applied / Pending</span> &nbsp; | &nbsp; 
+              ISSN Registration in progress with CSIR-NIScPR, India
             </p>
           </div>
           <div className="footer-links">
             <h4>Journals</h4>
             <ul>
               <li><Link to="/journals">All Journals</Link></li>
+              <li><Link to="/editorial-board">Editorial Board</Link></li>
+              <li><Link to="/archive">Issues &amp; Archives</Link></li>
               <li><Link to="/browse">Browse Articles</Link></li>
             </ul>
           </div>

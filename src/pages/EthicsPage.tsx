@@ -60,9 +60,11 @@ export default function EthicsPage() {
             <div className="about-text-block">
               <h3 className="about-block-title">4. Archiving & Preservation</h3>
               <p>
-                To ensure long-term digital preservation, SISC Journal archives all content in the 
-                <strong> Keepers Registry</strong> and <strong>PMC (PubMed Central)</strong> where applicable. 
-                We are committed to the permanent availability and accessibility of scholarly research.
+                SISC Journal is committed to ensuring the long-term digital preservation and accessibility
+                of all published scholarship. We intend to apply for archiving in recognised preservation
+                programmes — including the <strong>Keepers Registry</strong> and other ISSN-recognised digital
+                preservation schemes — following the confirmation of our ISSN registration and the publication
+                of our inaugural issue.
               </p>
             </div>
 

@@ -79,7 +79,55 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="transparency-grid" style={{ marginTop: '4rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+            {/* ── Journal Particulars Table (ISSN India guideline requirement) ── */}
+            <div style={{ marginTop: '4rem', marginBottom: '3rem' }}>
+              <h3 className="about-block-title" style={{ marginBottom: '1.25rem' }}>Journal Particulars</h3>
+              <table style={{
+                width: '100%',
+                borderCollapse: 'collapse',
+                fontSize: '0.9rem',
+                color: 'var(--text-secondary)',
+                border: '1.5px solid var(--border-subtle)',
+                borderRadius: 'var(--border-radius)',
+                overflow: 'hidden'
+              }}>
+                <tbody>
+                  {[
+                    { label: 'Title', value: 'SISC Journal of Indo-Semitic Studies' },
+                    { label: 'Frequency', value: 'Quarterly (4 issues per year)' },
+                    { label: 'E-ISSN', value: 'Applied / Pending Registration' },
+                    { label: 'Publisher Name', value: 'SISC Research Group' },
+                    { label: 'Publisher Address', value: '12/452 Academic Plaza, MG Road, Kottayam, Kerala – 686 001, India' },
+                    { label: 'Starting Year', value: '2026' },
+                    { label: 'Subject', value: 'Theology, Church History, Liturgical Studies, Comparative Religion' },
+                    { label: 'Language', value: 'English' },
+                    { label: 'Publication Format', value: 'Online' },
+                    { label: 'Website', value: 'https://jsisc.in' },
+                    { label: 'Email', value: 'editor@siscpress.org' },
+                    { label: 'Review Policy', value: 'Double-Blind Peer Review' },
+                    { label: 'Access Model', value: 'Platinum Open Access (No APCs)' },
+                    { label: 'License', value: 'Creative Commons Attribution 4.0 International (CC BY 4.0)' },
+                  ].map(({ label, value }, i) => (
+                    <tr key={label} style={{ background: i % 2 === 0 ? '#ffffff' : 'var(--bg-surface)' }}>
+                      <td style={{
+                        padding: '0.7rem 1.25rem',
+                        fontWeight: 700,
+                        color: 'var(--text-primary)',
+                        width: '35%',
+                        borderBottom: '1px solid var(--border-subtle)',
+                        verticalAlign: 'top'
+                      }}>{label}</td>
+                      <td style={{
+                        padding: '0.7rem 1.25rem',
+                        borderBottom: '1px solid var(--border-subtle)'
+                      }}>{value}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="transparency-grid" style={{ marginTop: '2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
               <div className="transparency-item">
                 <h4 style={{ color: 'var(--accent-secondary)', marginBottom: '0.5rem' }}>Ownership & Management</h4>
                 <p style={{ fontSize: '0.9rem' }}>
@@ -104,8 +152,8 @@ export default function AboutPage() {
               <div className="transparency-item">
                 <h4 style={{ color: 'var(--accent-secondary)', marginBottom: '0.5rem' }}>Identification</h4>
                 <p style={{ fontSize: '0.9rem' }}>
-                  <strong>Electronic ISSN:</strong> 2831-402X<br />
-                  <strong>Print ISSN:</strong> 2831-4011
+                  <strong>E-ISSN:</strong> Applied / Pending Registration<br />
+                  Registration in progress with ISSN National Centre, India (CSIR-NIScPR).
                 </p>
               </div>
             </div>

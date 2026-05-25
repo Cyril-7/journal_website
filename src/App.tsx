@@ -10,6 +10,8 @@ import ContactPage from './pages/ContactPage';
 import EthicsPage from './pages/EthicsPage';
 import ArticleDetailPage from './pages/ArticleDetailPage';
 import NewsPage from './pages/NewsPage';
+import EditorialBoardPage from './pages/EditorialBoardPage';
+import ArchivePage from './pages/ArchivePage';
 
 export default function App() {
   return (
@@ -24,6 +26,8 @@ export default function App() {
           <Route path="contact" element={<ContactPage />} />
           <Route path="ethics" element={<EthicsPage />} />
           <Route path="news" element={<NewsPage />} />
+          <Route path="editorial-board" element={<EditorialBoardPage />} />
+          <Route path="archive" element={<ArchivePage />} />
           <Route path="article/:id" element={<ArticleDetailPage />} />
         </Route>
       </Routes>

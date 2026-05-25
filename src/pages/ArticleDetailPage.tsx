@@ -7,14 +7,7 @@ export default function ArticleDetailPage() {
   const article = articles.find(a => a.id === Number(id));
 
   // Local state for registered academic comments/correspondence
-  const [comments, setComments] = useState([
-    {
-      author: "Prof. Dr. Mathew Philip",
-      affiliation: "Department of Syriac Studies, SEERI",
-      date: "2 weeks ago",
-      text: "This critique provides outstanding historical clarity on the post-colonial transition of liturgical frameworks in Kerala. The analysis on St. Thomas cultural hermeneutics aligns perfectly with modern peer assessments. An exceptional scholarly contribution."
-    }
-  ]);
+  const [comments, setComments] = useState<{ author: string; affiliation: string; date: string; text: string }[]>([]);
 
   const [newAuthor, setNewAuthor] = useState('');
   const [newAffiliation, setNewAffiliation] = useState('');
@@ -72,7 +65,7 @@ export default function ArticleDetailPage() {
       {/* Main Page Layout */}
       <section style={{ padding: '4rem 0', background: '#ffffff', fontFamily: 'var(--font-serif)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 280px', gap: '5rem', alignItems: 'start' }}>
+          <div className="article-detail-layout">
             
             {/* Main Manuscript (Left) */}
             <div style={{ maxWidth: '800px' }}>
@@ -83,15 +76,7 @@ export default function ArticleDetailPage() {
               </div>
 
               {/* Manuscript Title */}
-              <h1 style={{ 
-                fontFamily: 'var(--font-serif)', 
-                fontSize: '2.5rem', 
-                fontWeight: 700, 
-                lineHeight: '1.25', 
-                color: 'var(--text-primary)',
-                marginBottom: '1.5rem',
-                letterSpacing: '-0.01em'
-              }}>
+              <h1 className="article-detail-title">
                 {article.title}
               </h1>
 
@@ -109,12 +94,7 @@ export default function ArticleDetailPage() {
 
               {/* Classical Abstract Block */}
               {article.abstract && (
-                <div style={{ 
-                  margin: '0 2.5rem 3.5rem 2.5rem', 
-                  padding: '1.5rem 0', 
-                  borderTop: '1px solid var(--border-mid)',
-                  borderBottom: '1px solid var(--border-mid)'
-                }}>
+                <div className="article-abstract-block">
                   <h3 style={{ 
                     fontFamily: 'var(--font-serif)', 
                     fontSize: '0.9rem', 
@@ -257,7 +237,7 @@ export default function ArticleDetailPage() {
                     </div>
                   ) : (
                     <form onSubmit={handleCommentSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                      <div className="article-comment-form-grid">
                         <input 
                           type="text" 
                           placeholder="Your Full Name *" 
@@ -303,7 +283,7 @@ export default function ArticleDetailPage() {
             </div>
 
             {/* Sidebar metadata & actions (Right) */}
-            <aside className="no-print" style={{ borderLeft: '1px solid var(--border-mid)', paddingLeft: '2rem', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+            <aside className="no-print article-detail-sidebar">
               
               {/* Minimalist Plain Text Actions */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginTop: '1rem' }}>
