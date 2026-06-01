@@ -1,8 +1,18 @@
 import React from 'react';
+import { useSEO } from '../useSEO';
 
 const news: { date: string; tag: string; title: string; excerpt: string }[] = [];
 
 export default function NewsPage() {
+  useSEO({
+    title: 'News & Announcements',
+    description:
+      'Latest news, announcements, and updates from the SISC Journal editorial team. Stay informed about new publications, calls for papers, and academic events.',
+    keywords:
+      'SISC journal news, academic announcements, call for papers, new publications, Indo-Semitic Christianity events',
+    canonical: '/news',
+  });
+
   return (
     <>
       <div className="page-banner">

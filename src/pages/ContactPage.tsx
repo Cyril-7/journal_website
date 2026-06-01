@@ -1,6 +1,36 @@
 import React from 'react';
+import { useSEO } from '../useSEO';
 
 export default function ContactPage() {
+  useSEO({
+    title: 'Contact the Editorial Office',
+    description:
+      'Contact the SISC Journal editorial office, manuscript submission desk, or administrative headquarters. Reach us for editorial inquiries, scholarly partnerships, and author support.',
+    keywords:
+      'contact SISC journal, editorial office, manuscript submission contact, SISC Research Group address, Kerala academic journal contact',
+    canonical: '/contact',
+    structuredData: {
+      '@context': 'https://schema.org',
+      '@type': 'ContactPage',
+      name: 'Contact — SISC Journal Editorial Office',
+      url: 'https://jsisc.in/contact',
+      description: 'Contact the editorial board and administrative office of the Studies in Indo-Semitic Christianity Journal.',
+      publisher: {
+        '@type': 'Organization',
+        name: 'SISC Research Group',
+        email: 'editor@siscpress.org',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: '12/452 Academic Plaza, MG Road',
+          addressLocality: 'Kottayam',
+          addressRegion: 'Kerala',
+          postalCode: '686001',
+          addressCountry: 'IN',
+        },
+      },
+    },
+  });
+
   return (
     <>
       {/* Authentic, Minimal Academic Page Header */}

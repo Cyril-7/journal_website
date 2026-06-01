@@ -1,6 +1,16 @@
 import React from 'react';
+import { useSEO } from '../useSEO';
 
 export default function EthicsPage() {
+  useSEO({
+    title: 'Publication Ethics & Policies',
+    description:
+      'SISC Journal publication ethics, peer-review standards, COPE compliance, open-access licensing, archiving policy, and authorship guidelines. No APCs charged.',
+    keywords:
+      'publication ethics, COPE guidelines, open access license, double blind peer review, SISC journal policy, no APC, CC BY 4.0',
+    canonical: '/ethics',
+  });
+
   return (
     <>
       <div className="page-banner">

@@ -1,6 +1,8 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { articles, Article } from '../data';
+import { useSEO } from '../useSEO';
+
 
 // ─── Grouping Logic ──────────────────────────────────────────────────────────
 
@@ -419,6 +421,23 @@ export default function ArchivePage() {
   const yearGroups = useMemo(() => groupArticles(articles), []);
   const totalArticles = articles.filter((a) => a.volume !== undefined).length;
   const totalIssues = yearGroups.reduce((s, y) => s + y.issues.length, 0);
+
+  useSEO({
+    title: 'Issues & Archives',
+    description:
+      `Browse the full archive of ${totalIssues} issues and ${totalArticles} peer-reviewed articles published in the Studies in Indo-Semitic Christianity Journal. Organised by year, volume, and issue.`,
+    keywords:
+      'SISC journal archive, Indo-Semitic Christianity issues, past volumes, journal archive India, theology history journal archive',
+    canonical: '/archive',
+    structuredData: {
+      '@context': 'https://schema.org',
+      '@type': 'ArchiveComponent',
+      name: 'Journal Archive — Studies in Indo-Semitic Christianity',
+      url: 'https://jsisc.in/archive',
+      description: `Complete archive of all published issues and articles in the Studies in Indo-Semitic Christianity Journal.`,
+    },
+  });
+
 
   return (
     <>

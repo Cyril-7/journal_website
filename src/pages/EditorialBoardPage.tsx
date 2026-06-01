@@ -1,4 +1,6 @@
 import React from 'react';
+import { useSEO } from '../useSEO';
+
 
 // ─── Editorial Board Data ─────────────────────────────────────────────────────
 // Each member includes all fields required by ISSN India guidelines:
@@ -254,6 +256,23 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
 
 export default function EditorialBoardPage() {
   const allMembers = [...patronAndChief, ...managingEditors, ...editorialBoard];
+
+  useSEO({
+    title: 'Editorial Board',
+    description:
+      'Meet the distinguished scholars on the SISC Journal Editorial Board — theologians, historians, and Syriac studies experts from leading institutions across India and abroad.',
+    keywords:
+      'editorial board, SISC journal editors, theology scholars, Syriac studies board, Malankara church scholars, academic journal India editorial',
+    canonical: '/editorial-board',
+    structuredData: {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Editorial Board — SISC Academic Press',
+      url: 'https://jsisc.in/editorial-board',
+      description: 'The SISC Journal editorial board comprises distinguished scholars in theology, history, and comparative religion from leading global institutions.',
+    },
+  });
+
 
   return (
     <>

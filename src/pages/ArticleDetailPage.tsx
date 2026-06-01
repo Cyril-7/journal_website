@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { articles } from '../data';
+import { useSEO } from '../useSEO';
+
 
 export default function ArticleDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -15,6 +17,43 @@ export default function ArticleDetailPage() {
   const [newText, setNewText] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
+  // Dynamic per-article SEO
+  useSEO(
+    article
+      ? {
+          title: article.title,
+          description: article.abstract
+            ? article.abstract.slice(0, 200).trimEnd() + (article.abstract.length > 200 ? '…' : '')
+            : article.excerpt,
+          keywords: article.tags ? article.tags.join(', ') : 'Indo-Semitic Christianity, SISC journal, theology, church history',
+          canonical: `/article/${article.id}`,
+          ogType: 'article',
+          structuredData: {
+            '@context': 'https://schema.org',
+            '@type': 'ScholarlyArticle',
+            headline: article.title,
+            description: article.abstract ?? article.excerpt,
+            author: { '@type': 'Person', name: article.author },
+            publisher: {
+              '@type': 'Organization',
+              name: 'SISC Research Group',
+              url: 'https://jsisc.in',
+              logo: { '@type': 'ImageObject', url: 'https://jsisc.in/src/assets/logo.png' },
+            },
+            datePublished: article.date,
+            url: `https://jsisc.in/article/${article.id}`,
+            isAccessibleForFree: true,
+            license: 'https://creativecommons.org/licenses/by/4.0/',
+            ...(article.doi ? { identifier: { '@type': 'PropertyValue', propertyID: 'doi', value: article.doi } } : {}),
+          },
+        }
+      : {
+          title: 'Article Not Found',
+          description: 'The requested article could not be found in the SISC Journal research library.',
+          canonical: '/browse',
+        }
+  );
+
   if (!article) {
     return (
       <div className="container" style={{ padding: '120px 0', textAlign: 'center' }}>
@@ -24,6 +63,8 @@ export default function ArticleDetailPage() {
       </div>
     );
   }
+
+
 
   const handleCommentSubmit = (e: React.FormEvent) => {
     e.preventDefault();

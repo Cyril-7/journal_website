@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { articles } from '../data';
+import { useSEO } from '../useSEO';
+
 
 function Hero() {
   return (
@@ -232,6 +234,36 @@ function FeaturedGrid() {
 }
 
 export default function HomePage() {
+  useSEO({
+    title: 'Home',
+    description:
+      'SISC Academic Press — peer-reviewed research on Malankara Church, St. Thomas traditions, Syriac liturgies, and the Indo-Semitic heritage. Gold open-access journal.',
+    keywords:
+      'Indo-Semitic Christianity, Malankara Church, St. Thomas, Syriac liturgy, SISC Journal, open access, Kerala Christianity, church history, theology',
+    canonical: '/',
+    ogType: 'website',
+    structuredData: {
+      '@context': 'https://schema.org',
+      '@type': 'ScholarlyArticle',
+      name: 'Studies in Indo-Semitic Christianity Journal',
+      description:
+        'Peer-reviewed academic journal dedicated to Indo-Semitic Christianity, the Malankara Church, St. Thomas traditions, and Syriac liturgical heritage.',
+      url: 'https://jsisc.in',
+      publisher: {
+        '@type': 'Organization',
+        name: 'SISC Research Group',
+        url: 'https://jsisc.in',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://jsisc.in/src/assets/logo.png',
+        },
+      },
+      inLanguage: 'en',
+      accessMode: 'textual',
+      isAccessibleForFree: true,
+    },
+  });
+
   return (
     <>
       <Hero />
@@ -239,3 +271,4 @@ export default function HomePage() {
     </>
   );
 }
+

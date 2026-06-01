@@ -1,6 +1,29 @@
 import React from 'react';
+import { useSEO } from '../useSEO';
 
 export default function AboutPage() {
+  useSEO({
+    title: 'About the Journal',
+    description:
+      'Learn about the Studies in Indo-Semitic Christianity Journal — its mission, origins, editorial policy, and commitment to interdisciplinary open-access scholarship on the Malankara Church.',
+    keywords:
+      'about SISC journal, Indo-Semitic Christianity mission, Malankara Church research, open access theology journal, Kerala Christian studies',
+    canonical: '/about',
+    structuredData: {
+      '@context': 'https://schema.org',
+      '@type': 'AboutPage',
+      name: 'About — Studies in Indo-Semitic Christianity Journal',
+      url: 'https://jsisc.in/about',
+      description:
+        'The SISC Journal is dedicated to interdisciplinary academic inquiry into Indo-Semitic Christianity, its identity, genealogy, and contemporary challenges.',
+      publisher: {
+        '@type': 'Organization',
+        name: 'SISC Research Group',
+        url: 'https://jsisc.in',
+      },
+    },
+  });
+
   return (
     <>
       {/* Page Banner */}

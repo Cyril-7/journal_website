@@ -1,7 +1,25 @@
 import { Link } from 'react-router-dom';
 import { journals } from '../data';
+import { useSEO } from '../useSEO';
 
 export default function JournalsPage() {
+  useSEO({
+    title: 'Our Journals',
+    description:
+      'Explore peer-reviewed academic journals published by SISC Academic Press on Indo-Semitic Christianity, Syriac studies, church history, and theology. Gold open-access, double-blind review.',
+    keywords:
+      'SISC journals, academic journals, Indo-Semitic Christianity, Syriac studies, church history, open access journal India, theology journal',
+    canonical: '/journals',
+    structuredData: {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: 'Our Journals — SISC Academic Press',
+      url: 'https://jsisc.in/journals',
+      description: 'Gold open-access peer-reviewed journals on Indo-Semitic Christianity and related theological and historical disciplines.',
+      publisher: { '@type': 'Organization', name: 'SISC Research Group', url: 'https://jsisc.in' },
+    },
+  });
+
   return (
     <>
       <div className="page-banner" style={{ background: 'linear-gradient(135deg, #ffffff 40%, #fdf8f2 100%)', borderBottom: '1px solid var(--border-subtle)' }}>

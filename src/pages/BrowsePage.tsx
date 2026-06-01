@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { articles } from '../data';
+import { useSEO } from '../useSEO';
+
 
 const filters = ['All', 'Historical Theology', 'Church History', 'Liturgical Studies', 'Ecclesiology', 'Cultural Studies', 'Comparative Religion'];
 
@@ -10,6 +12,23 @@ export default function BrowsePage() {
   const [isFocused, setIsFocused] = useState(false);
   const location = useLocation();
   const inputRef = useRef<HTMLInputElement>(null);
+
+  useSEO({
+    title: 'Research Library',
+    description:
+      'Browse the SISC open-access research library. Search peer-reviewed articles on Indo-Semitic Christianity, Malankara Church history, Syriac liturgy, ecclesiology, and theology.',
+    keywords:
+      'browse articles, Indo-Semitic Christianity research, Malankara church history, Syriac liturgy articles, open access theology papers, SISC library',
+    canonical: '/browse',
+    structuredData: {
+      '@context': 'https://schema.org',
+      '@type': 'SearchResultsPage',
+      name: 'Research Library — SISC Journal',
+      url: 'https://jsisc.in/browse',
+      description: 'Browse and search all open-access peer-reviewed articles in the SISC journal library.',
+    },
+  });
+
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);

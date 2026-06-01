@@ -1,8 +1,18 @@
 import React from 'react';
+import { useSEO } from '../useSEO';
 
 const steps: { num: string; title: string; desc: string }[] = [];
 
 export default function AuthorsPage() {
+  useSEO({
+    title: 'Author Guidelines',
+    description:
+      'Instructions for authors submitting to SISC Journal. Learn about manuscript preparation, peer-review process, formatting requirements, and open-access publication policies.',
+    keywords:
+      'author guidelines, manuscript submission, SISC journal submission, peer review process, academic publishing India, open access theology journal',
+    canonical: '/authors',
+  });
+
   return (
     <>
       <div className="page-banner">
