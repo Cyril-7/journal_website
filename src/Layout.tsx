@@ -104,7 +104,10 @@ function Footer() {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>© 2026 SISC Research Group. All rights reserved.</p>
+          <p>
+            © 2026 SISC Research Group. All rights reserved.<br />
+            Built by <a href="https://tenvix.org" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline' }}>Tenvix Technologies</a>
+          </p>
         </div>
       </div>
     </footer>
