@@ -3,59 +3,143 @@ import { Link, useLocation, Outlet } from 'react-router-dom';
 import logo from './assets/logo.png';
 
 function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
   const active = (path: string) => location.pathname === path ? 'nav-active' : '';
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
-  const isHome = location.pathname === '/';
-  const navbarClass = `navbar ${ (scrolled || !isHome) ? 'scrolled' : '' } ${ mobileMenuOpen ? 'mobile-active' : '' }`;
+  const toggleDropdown = (name: string) => {
+    setOpenDropdown(prev => prev === name ? null : name);
+  };
+
+  const closeAll = () => {
+    setOpenDropdown(null);
+    setMobileMenuOpen(false);
+  };
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileMenuOpen]);
+
+  // Close dropdown when clicking outside (desktop)
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest('.nav-dropdown')) {
+        setOpenDropdown(null);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  // Close all on route change
+  useEffect(() => {
+    setOpenDropdown(null);
+    setMobileMenuOpen(false);
+  }, [location.pathname]);
 
   return (
-    <nav className={navbarClass}>
-      <div className="container nav-content">
-        <Link to="/" className="logo">
-          <img src={logo} alt="SISC Logo" className="navbar-logo-img" />
-          <span>SISC</span>
-        </Link>
-        
-        <div className={`nav-links ${mobileMenuOpen ? 'mobile-active' : ''}`}>
-          <Link to="/" className={active('/')} onClick={() => setMobileMenuOpen(false)}>Home</Link>
-          <Link to="/about" className={active('/about')} onClick={() => setMobileMenuOpen(false)}>About Us</Link>
-          <Link to="/journals" onClick={() => setMobileMenuOpen(false)}>Journals</Link>
-          <Link to="/editorial-board" className={active('/editorial-board')} onClick={() => setMobileMenuOpen(false)}>Editorial Board</Link>
-          <Link to="/archive" className={active('/archive')} onClick={() => setMobileMenuOpen(false)}>Issues &amp; Archives</Link>
-          <Link to="/browse" onClick={() => setMobileMenuOpen(false)}>Browse Articles</Link>
-          <Link to="/news" className={active('/news')} onClick={() => setMobileMenuOpen(false)}>News</Link>
-          <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>Contact Us</Link>
-        </div>
-
-        <div className="nav-actions">
-          <Link to="/contact" className="btn btn-primary nav-subscribe-btn">
-            Contact Us
+    <>
+      <nav className="navbar">
+        <div className="container nav-content">
+          <Link to="/" className="logo" onClick={closeAll}>
+            <img src={logo} alt="SISC Logo" className="navbar-logo-img" />
+            <div className="logo-text-group">
+              <span className="logo-title">SISC</span>
+              <span className="logo-subtitle">Studies in Indo-Semitic Christianity</span>
+            </div>
           </Link>
-          <button 
-            className={`mobile-menu-toggle ${mobileMenuOpen ? 'active' : ''}`}
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle Menu"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+
+          <div className={`nav-links ${mobileMenuOpen ? 'mobile-active' : ''}`}>
+            <Link to="/" className={active('/')} onClick={closeAll}>Home</Link>
+
+            {/* About dropdown */}
+            <div className={`nav-dropdown ${openDropdown === 'about' ? 'open' : ''}`}>
+              <div
+                className="nav-dropdown-trigger"
+                onClick={() => toggleDropdown('about')}
+                aria-expanded={openDropdown === 'about'}
+              >
+                About
+                <span className={`dropdown-arrow ${openDropdown === 'about' ? 'open' : ''}`}>▼</span>
+              </div>
+              <div className="dropdown-menu">
+                <Link to="/about" onClick={closeAll}>About JSISC</Link>
+                <Link to="/editorial-board" onClick={closeAll}>Editorial Board</Link>
+                <Link to="/contact" onClick={closeAll}>Contact the Editorial Office</Link>
+              </div>
+            </div>
+
+            {/* Browse Issues dropdown */}
+            <div className={`nav-dropdown ${openDropdown === 'browse' ? 'open' : ''}`}>
+              <div
+                className="nav-dropdown-trigger"
+                onClick={() => toggleDropdown('browse')}
+                aria-expanded={openDropdown === 'browse'}
+              >
+                Browse Issues
+                <span className={`dropdown-arrow ${openDropdown === 'browse' ? 'open' : ''}`}>▼</span>
+              </div>
+              <div className="dropdown-menu">
+                <Link to="/archive" onClick={closeAll}>All Issues</Link>
+              </div>
+            </div>
+
+            {/* Contributions dropdown */}
+            <div className={`nav-dropdown ${openDropdown === 'contributions' ? 'open' : ''}`}>
+              <div
+                className="nav-dropdown-trigger"
+                onClick={() => toggleDropdown('contributions')}
+                aria-expanded={openDropdown === 'contributions'}
+              >
+                Contributions
+                <span className={`dropdown-arrow ${openDropdown === 'contributions' ? 'open' : ''}`}>▼</span>
+              </div>
+              <div className="dropdown-menu">
+                <Link to="/contact" onClick={closeAll}>Submit Manuscript</Link>
+                <Link to="/authors" onClick={closeAll}>Instructions for Authors</Link>
+                <Link to="/authors" onClick={closeAll}>Manuscript Preparation</Link>
+              </div>
+            </div>
+
+            {/* Contact Us inside mobile drawer */}
+            <div className="mobile-drawer-cta">
+              <Link to="/contact" className="btn btn-primary mobile-drawer-btn" onClick={closeAll}>
+                Contact Us
+              </Link>
+            </div>
+          </div>
+
+          <div className="nav-actions">
+            <Link to="/contact" className="btn btn-primary nav-subscribe-btn desktop-only-btn" onClick={closeAll}>
+              Contact Us
+            </Link>
+            <button
+              className={`mobile-menu-toggle ${mobileMenuOpen ? 'active' : ''}`}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle Menu"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+
+      {/* Overlay for mobile menu */}
+      {mobileMenuOpen && (
+        <div className="mobile-nav-overlay" onClick={closeAll} aria-hidden="true" />
+      )}
+    </>
   );
 }
 
@@ -67,7 +151,10 @@ function Footer() {
           <div className="footer-info">
             <div className="footer-logo">
               <img src={logo} alt="SISC Logo" className="footer-logo-img" />
-              <span>SISC</span>
+              <div className="logo-text-group">
+                <span className="logo-title">SISC</span>
+                <span className="logo-subtitle">Studies in Indo-Semitic Christianity</span>
+              </div>
             </div>
             <p className="footer-desc">
               Advancing scholarship on Indo-Semitic Christianity, the Malankara Church,

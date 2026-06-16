@@ -12,9 +12,10 @@ function Hero() {
         <div className="hero-content fade-in">
           <h1>Advancing Scholarship on Indo-Semitic Christianity</h1>
           <p>
-            SISC Academic Press brings you peer-reviewed discoveries on the Malankara Church,
-            St. Thomas traditions, Syriac liturgies, and the rich interweaving of Indian and Semitic heritage.
+            SISC Academic Press publishes peer-reviewed research on the Malankara Church,
+            St. Thomas traditions, Syriac liturgies, and the rich interweaving of Indian and Semitic Christian heritage.
           </p>
+
           <div className="hero-actions">
             <Link to="/browse" className="btn btn-primary">Browse Articles</Link>
             <Link to="/contact" className="btn btn-outline">Contact Us</Link>
@@ -92,8 +93,8 @@ function FeaturedGrid() {
                   </div>
                 </Link>
               ) : (
-                <div className="featured-single-card-empty" style={{ 
-                  display: 'flex', 
+                <div className="featured-single-card-empty" style={{
+                  display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'center',
                   alignItems: 'center',
@@ -128,7 +129,7 @@ function FeaturedGrid() {
             <form onSubmit={handleSearchSubmit}>
               <div className="search-input-wrap">
                 <svg className="search-input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                  <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
                 </svg>
                 <input
                   type="text"
