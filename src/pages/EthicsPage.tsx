@@ -30,13 +30,21 @@ export default function EthicsPage() {
             <div className="about-text-block">
               <h3 className="about-block-title">1. Peer Review Process</h3>
               <p>
-                All research articles published in SISC Journal undergo a rigorous double-blind peer review process. 
-                Manuscripts are first screened by the editorial office for aims, scope, and basic technical requirements. 
-                Suitable papers are then sent to at least two independent expert reviewers.
+                All research articles published in SISC Journal undergo a rigorous <strong>double-blind peer review</strong> process.
+                Manuscripts are first screened by the editorial office for scope fit and a minimum quality
+                threshold — this initial editorial assessment may take up to 4 weeks.
               </p>
               <p>
-                The editors make decisions based on the reviewers' recommendations. The identity of both authors and 
-                reviewers remains anonymous throughout the process to ensure objective evaluation.
+                Papers that pass the initial assessment are then sent to independent expert reviewers. The
+                full peer review process may take up to 3 months. If a revision is requested, the second
+                review will take up to one month from the date of resubmission. The identities of both
+                authors and reviewers remain anonymous throughout the process.
+              </p>
+              <p>
+                Authors who believe a significant procedural error occurred during peer review may submit
+                a written appeal to the Editor-in-Chief. Appeals should clearly explain the grounds for
+                reconsideration. Editorial decisions based solely on scholarly judgment are generally not
+                subject to appeal.
               </p>
             </div>
 
@@ -55,15 +63,16 @@ export default function EthicsPage() {
             </div>
 
             <div className="about-text-block">
-              <h3 className="about-block-title">3. Copyright & Licensing</h3>
+              <h3 className="about-block-title">3. Copyright &amp; Licensing</h3>
               <p>
-                SISC Journal is an Open Access journal. Articles are published under the 
-                <strong> Creative Commons Attribution 4.0 International (CC BY 4.0)</strong> license.
+                If a paper is selected for publication, the journal will contact the author with copyright
+                and licensing details <strong>before proceeding further</strong>. Authors are encouraged
+                to disclose any prior copyright obligations when submitting their manuscript.
               </p>
               <p>
-                Authors retain copyright of their work while granting the journal the right of first publication. 
-                This allows others to distribute, remix, and build upon the work, even commercially, as long as 
-                the original authors are credited.
+                Authors must ensure that their submitted work is original, that all sources are
+                appropriately acknowledged, and that all applicable copyright permissions have been
+                obtained and documented.
               </p>
             </div>
 
@@ -79,11 +88,12 @@ export default function EthicsPage() {
             </div>
 
             <div className="about-text-block">
-              <h3 className="about-block-title">5. Author Fees & Waivers</h3>
+              <h3 className="about-block-title">5. Processing &amp; Publication Charges</h3>
               <p>
-                SISC Journal currently <strong>does not charge any Article Processing Charges (APCs)</strong> 
-                or submission fees. We are supported by institutional grants and the SISC Research Group 
-                to ensure that high-quality research is accessible without financial barriers to authors.
+                There are <strong>no submission or publication charges</strong> associated with this journal.
+                Authors are not required to pay any fees at any stage of the submission or publication
+                process. The journal is committed to ensuring that quality research can be published
+                without financial barriers.
               </p>
             </div>
 

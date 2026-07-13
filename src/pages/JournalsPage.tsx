@@ -42,9 +42,9 @@ export default function JournalsPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem' }}>
             {[
               { label: 'Review Process', value: 'Double-Blind Peer Review', desc: 'Rigorous scholarly verification' },
-              { label: 'Access Policy', value: 'Gold Open Access', desc: 'Fully CC-BY compliant' },
-              { label: 'Average Review Time', value: '45-60 Days', desc: 'Efficient submission turnaround' },
-              { label: 'Archiving & Indexing', value: 'CrossRef, DOAJ, Scholar', desc: 'Persistent DOIs on all articles' }
+              { label: 'Access Policy', value: 'Open Access', desc: 'No submission or publication charges' },
+              { label: 'Issues Per Year', value: '2 Issues', desc: 'Bi-annual publication schedule' },
+              { label: 'Initial Assessment', value: 'Up to 4 Weeks', desc: 'Editorial scope & quality check' }
             ].map((m, idx) => (
               <div key={idx} style={{ 
                 background: '#ffffff', 

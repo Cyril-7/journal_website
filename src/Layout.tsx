@@ -161,8 +161,8 @@ function Footer() {
               and Asian Christian heritage. Peer-reviewed. Open-access.
             </p>
             <p style={{ marginTop: '1rem', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-              E-ISSN <span style={{ color: 'var(--accent-secondary)' }}>Applied / Pending</span> &nbsp; | &nbsp; 
-              ISSN Registration in progress with CSIR-NIScPR, India
+              ISSN: <span style={{ color: 'var(--accent-secondary)' }}>XXXX-XXXX</span> (Print)&nbsp; | &nbsp;
+              E-ISSN: <span style={{ color: 'var(--accent-secondary)' }}>XXXX-XXXX</span> (Online)
             </p>
           </div>
           <div className="footer-links">
