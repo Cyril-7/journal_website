@@ -46,18 +46,13 @@ export default function AboutPage() {
             <div className="about-mission-block" style={{ marginBottom: '2.5rem' }}>
               <h3>About the Journal</h3>
               <p>
-                <em>Studies in Indo-Semitic Christianity</em> (SISC) is a multidisciplinary journal focused
-                on the history, culture, theology and philosophical foundations of Indo-Semitic Christianity.
-                'Indo-Semitic Christianity,' a term coined by <strong>Ponnodoth Jossi Jacob Kathanar</strong> in
-                2014, refers to the branch of Christianity that exists in India, presumably from the first
-                century CE to date.
+                <em>The Journal of Syriac and Indo-Semitic Christianity</em> is an interdisciplinary academic journal dedicated to the study of Christianity in India, Asia, and the wider Semitic world. It explores the historical, theological, cultural, and ecclesial traditions that have shaped Christian identity across these contexts, with particular attention to the Indian and Syriac Christian traditions.
               </p>
               <p style={{ marginTop: '1rem' }}>
-                Never being directly associated with the old Roman Empire, and later being an Asian Church
-                in a colonised society, Indo-Semitic Christianity remained more or less completely outside
-                scholarly interest. This Journal is an attempt to overcome this limitation. While doing so,
-                it will engage not only with culture and history but also the theology of Indo-Semitic
-                Christianity, as it believes theology forms an integral part of its identity.
+                The journal seeks to examine the genealogy and contemporary expressions of Indo-Semitic Christianity, its relationship with West Syriac and other Asian Christian traditions, and the ways in which indigenous Christian identities have encountered, absorbed, resisted, and negotiated Western and Byzantine influences. It welcomes scholarship that critically engages questions of Christian identity, tradition, inculturation, ecclesiology, theology, history, liturgy, spirituality, culture, and the lived experience of Christian communities.
+              </p>
+              <p style={{ marginTop: '1rem' }}>
+                By bringing together historical and theological inquiry with insights from the wider humanities and social sciences, the journal aims to foster a deeper understanding of Christianity as an Asian and Semitic phenomenon and to create space for critical reflection on its past, present, and future.
               </p>
             </div>
 
