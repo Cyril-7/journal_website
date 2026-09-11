@@ -1,9 +1,8 @@
 import React from 'react';
 import { useSEO } from '../useSEO';
 
-const guidelines: { icon: string; title: string; items: string[] }[] = [
+const guidelines: { title: string; items: string[] }[] = [
   {
-    icon: '📄',
     title: 'Manuscript Requirements',
     items: [
       'Word limit: 5,000 – 7,000 words (excluding footnotes and references)',
@@ -14,7 +13,6 @@ const guidelines: { icon: string; title: string; items: string[] }[] = [
     ],
   },
   {
-    icon: '📋',
     title: 'Abstract & Keywords',
     items: [
       'All papers shall include an abstract of 150–200 words',
@@ -22,7 +20,6 @@ const guidelines: { icon: string; title: string; items: string[] }[] = [
     ],
   },
   {
-    icon: '🔗',
     title: 'Citations & References',
     items: [
       'The Journal follows an open citation policy',
@@ -32,7 +29,6 @@ const guidelines: { icon: string; title: string; items: string[] }[] = [
     ],
   },
   {
-    icon: '⚖️',
     title: 'Ethics & Disclosure',
     items: [
       'AI tools used in the work shall be disclosed',
@@ -43,7 +39,6 @@ const guidelines: { icon: string; title: string; items: string[] }[] = [
     ],
   },
   {
-    icon: '👥',
     title: 'Human Participants',
     items: [
       'If human participants are involved, all internationally accepted ethical guidelines shall be followed',
@@ -51,7 +46,6 @@ const guidelines: { icon: string; title: string; items: string[] }[] = [
     ],
   },
   {
-    icon: '🏗️',
     title: 'Paper Structure',
     items: [
       'The journal does not prescribe any particular structure for the paper',
@@ -119,15 +113,12 @@ export default function AuthorsPage() {
                       padding: '1.75rem',
                     }}
                   >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
-                      <span style={{ fontSize: '1.5rem' }}>{g.icon}</span>
-                      <h4 style={{
-                        fontFamily: 'var(--font-serif)',
-                        fontSize: '1.05rem',
-                        color: 'var(--text-primary)',
-                        margin: 0,
-                      }}>{g.title}</h4>
-                    </div>
+                    <h4 style={{
+                      fontFamily: 'var(--font-serif)',
+                      fontSize: '1.05rem',
+                      color: 'var(--text-primary)',
+                      margin: '0 0 1rem 0',
+                    }}>{g.title}</h4>
                     <ul style={{ paddingLeft: '1.1rem', margin: 0 }}>
                       {g.items.map((item, i) => (
                         <li key={i} style={{
@@ -220,10 +211,10 @@ export default function AuthorsPage() {
                 For any queries regarding manuscript preparation or submission, contact the editorial
                 office at{' '}
                 <a
-                  href="mailto:editor@jsisc.in"
+                  href="mailto:contact@jsisc.in"
                   style={{ color: 'var(--accent-primary)', fontWeight: 600, textDecoration: 'underline' }}
                 >
-                  editor@jsisc.in
+                  contact@jsisc.in
                 </a>
                 .
               </p>

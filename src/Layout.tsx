@@ -104,9 +104,8 @@ function Navbar() {
                 <span className={`dropdown-arrow ${openDropdown === 'contributions' ? 'open' : ''}`}>▼</span>
               </div>
               <div className="dropdown-menu">
-                <Link to="/contact" onClick={closeAll}>Submit Manuscript</Link>
+                <Link to="/submit" onClick={closeAll}>Submit Manuscript</Link>
                 <Link to="/authors" onClick={closeAll}>Instructions for Authors</Link>
-                <Link to="/authors" onClick={closeAll}>Manuscript Preparation</Link>
               </div>
             </div>
 
@@ -160,10 +159,7 @@ function Footer() {
               Advancing scholarship on Indo-Semitic Christianity, the Malankara Church,
               and Asian Christian heritage. Peer-reviewed. Open-access.
             </p>
-            <p style={{ marginTop: '1rem', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-              ISSN: <span style={{ color: 'var(--accent-secondary)' }}>XXXX-XXXX</span> (Print)&nbsp; | &nbsp;
-              E-ISSN: <span style={{ color: 'var(--accent-secondary)' }}>XXXX-XXXX</span> (Online)
-            </p>
+
           </div>
           <div className="footer-links">
             <h4>Journals</h4>
@@ -185,6 +181,7 @@ function Footer() {
           <div className="footer-links">
             <h4>Support</h4>
             <ul>
+              <li><Link to="/submit">Submit Manuscript</Link></li>
               <li><Link to="/contact">Contact Us</Link></li>
               <li><Link to="/about">About Us</Link></li>
             </ul>

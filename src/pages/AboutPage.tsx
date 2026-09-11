@@ -178,15 +178,14 @@ export default function AboutPage() {
                   {[
                     { label: 'Title', value: 'Studies in Indo-Semitic Christianity (SISC)' },
                     { label: 'Frequency', value: '2 Issues per Year' },
-                    { label: 'ISSN (Print)', value: 'XXXX-XXXX' },
-                    { label: 'E-ISSN (Online)', value: 'XXXX-XXXX' },
+
                     { label: 'Publisher Name', value: 'SISC Research Group' },
                     { label: 'Starting Year', value: '2026' },
                     { label: 'Subject', value: 'History, Culture, Theology & Philosophical Foundations of Indo-Semitic Christianity' },
                     { label: 'Language', value: 'English' },
                     { label: 'Publication Format', value: 'Print & Online' },
                     { label: 'Website', value: 'https://jsisc.in' },
-                    { label: 'Email', value: 'editor@jsisc.in' },
+                    { label: 'Email', value: 'contact@jsisc.in' },
                     { label: 'Review Policy', value: 'Double-Blind Peer Review' },
                     { label: 'Access Model', value: 'Open Access (No Submission or Publication Charges)' },
                     { label: 'Copyright', value: 'Details communicated upon acceptance' },
@@ -232,13 +231,7 @@ export default function AboutPage() {
                   All content is freely available to readers without charge.
                 </p>
               </div>
-              <div className="transparency-item">
-                <h4 style={{ color: 'var(--accent-secondary)', marginBottom: '0.5rem' }}>Identification</h4>
-                <p style={{ fontSize: '0.9rem' }}>
-                  <strong>ISSN (Print):</strong> XXXX-XXXX<br />
-                  <strong>E-ISSN (Online):</strong> XXXX-XXXX
-                </p>
-              </div>
+
             </div>
           </div>
         </div>

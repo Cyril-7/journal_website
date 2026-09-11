@@ -7,6 +7,7 @@ import JournalsPage from './pages/JournalsPage';
 import BrowsePage from './pages/BrowsePage';
 import AuthorsPage from './pages/AuthorsPage';
 import ContactPage from './pages/ContactPage';
+import SubmitManuscriptPage from './pages/SubmitManuscriptPage';
 import EthicsPage from './pages/EthicsPage';
 import ArticleDetailPage from './pages/ArticleDetailPage';
 import NewsPage from './pages/NewsPage';
@@ -24,6 +25,8 @@ export default function App() {
           <Route path="browse" element={<BrowsePage />} />
           <Route path="authors" element={<AuthorsPage />} />
           <Route path="contact" element={<ContactPage />} />
+          <Route path="submit" element={<SubmitManuscriptPage />} />
+          <Route path="submit-manuscript" element={<SubmitManuscriptPage />} />
           <Route path="ethics" element={<EthicsPage />} />
           <Route path="news" element={<NewsPage />} />
           <Route path="editorial-board" element={<EditorialBoardPage />} />

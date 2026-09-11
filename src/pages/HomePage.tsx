@@ -37,10 +37,6 @@ function FeaturedGrid() {
     }
   };
 
-  // Get the most recent article as featured, and the rest as recent listings
-  const featuredArticle = articles[0];
-  const recentArticles = articles.slice(1);
-
   // Dynamically count categories
   const categoriesList = [
     'Historical Theology',
@@ -57,64 +53,62 @@ function FeaturedGrid() {
   return (
     <section className="container page-section">
       <div className="main-layout">
-        <div className="content-area">
-          <div id="latest">
-            <div className="grid-header">
-              <div>
-                <div className="section-eyebrow">Featured Insight</div>
-                <h2 className="section-h2-large" style={{ fontFamily: 'var(--font-serif)' }}>Current Issue Spotlight</h2>
-              </div>
-              <Link to="/browse" className="view-all-link" style={{
-                fontSize: '0.85rem', color: 'var(--accent-primary)', fontWeight: 600,
-                display: 'flex', alignItems: 'center', gap: '0.4rem',
-                borderBottom: '1px solid var(--accent-primary)', paddingBottom: '2px'
-              }}>
-                View Full Library →
-              </Link>
-            </div>
+        <div className="content-area" style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
+          {/* About the Journal */}
+          <div className="about-mission-block" style={{
+            background: 'var(--bg-surface)',
+            border: '1px solid var(--border-subtle)',
+            borderRadius: 'var(--border-radius)',
+            padding: '2.5rem',
+            boxShadow: '0 1px 6px rgba(13, 27, 42, 0.04)'
+          }}>
+            <div className="section-eyebrow" style={{ marginBottom: '0.5rem' }}>Journal Overview</div>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.85rem', color: 'var(--text-primary)', marginBottom: '1.25rem', fontWeight: 700 }}>
+              About the Journal
+            </h2>
+            <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8', fontSize: '1rem', marginBottom: '1rem' }}>
+              <em>Studies in Indo-Semitic Christianity</em> (SISC) is a multidisciplinary journal focused
+              on the history, culture, theology and philosophical foundations of Indo-Semitic Christianity.
+              'Indo-Semitic Christianity,' a term coined by <strong>Ponnodoth Jossi Jacob Kathanar</strong> in
+              2014, refers to the branch of Christianity that exists in India, presumably from the first
+              century CE to date.
+            </p>
+            <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8', fontSize: '1rem' }}>
+              Never being directly associated with the old Roman Empire, and later being an Asian Church
+              in a colonised society, Indo-Semitic Christianity remained more or less completely outside
+              scholarly interest. This Journal is an attempt to overcome this limitation. While doing so,
+              it will engage not only with culture and history but also the theology of Indo-Semitic
+              Christianity, as it believes theology forms an integral part of its identity.
+            </p>
+          </div>
 
-            <div className="featured-single-container" style={{ marginTop: '2rem' }}>
-              <div className="issue-meta-bar">
-                <span>Current Volume: Vol. 01 No. 01 (Inaugural)</span>
-                <span>Published: Upcoming</span>
-              </div>
-              {featuredArticle ? (
-                <Link to={`/article/${featuredArticle.id}`} className="featured-single-card" style={{ display: 'block', textDecoration: 'none' }}>
-                  <img src={featuredArticle.image} className="featured-single-img" alt={featuredArticle.title} />
-                  <div className="featured-single-overlay">
-                    <span className="card-meta">{featuredArticle.category}</span>
-                    <h3 className="featured-single-title" style={{ fontFamily: 'var(--font-serif)' }}>{featuredArticle.title}</h3>
-                    <p className="featured-single-excerpt">{featuredArticle.excerpt}</p>
-                    <div className="card-footer">
-                      <span className="featured-author" style={{ fontWeight: 600 }}>{featuredArticle.author}</span>
-                      <span className="footer-dot">·</span>
-                      <span>{featuredArticle.date}</span>
-                    </div>
-                  </div>
-                </Link>
-              ) : (
-                <div className="featured-single-card-empty" style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  padding: '4.5rem 2rem',
-                  border: '1.5px dashed var(--border-mid)',
-                  borderRadius: 'var(--border-radius)',
-                  textAlign: 'center',
-                  background: 'var(--bg-surface)'
-                }}>
-                  <span className="card-meta" style={{ marginBottom: '1.25rem', background: 'var(--accent-secondary)', color: '#ffffff', padding: '0.35rem 0.85rem', borderRadius: 'var(--border-radius)', fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.5px' }}>Call for Papers</span>
-                  <h3 style={{ fontFamily: 'var(--font-serif)', color: 'var(--text-primary)', fontSize: '1.65rem', marginBottom: '1rem', fontWeight: 700 }}>
-                    Inaugural Issue Call for Manuscripts
-                  </h3>
-                  <p style={{ color: 'var(--text-secondary)', maxWidth: '550px', fontSize: '0.96rem', lineHeight: '1.7', marginBottom: '2rem' }}>
-                    SISC Academic Press is currently accepting original research papers, historical reviews, and theological studies for our upcoming inaugural volume. We invite scholars to contribute.
-                  </p>
-                  <Link to="/contact" className="btn btn-primary" style={{ padding: '0.75rem 2rem', borderRadius: 'var(--border-radius)', textDecoration: 'none' }}>Contact to Submit</Link>
-                </div>
-              )}
-            </div>
+          {/* Our Mission */}
+          <div className="about-mission-block" style={{
+            background: 'var(--bg-surface)',
+            border: '1px solid var(--border-subtle)',
+            borderRadius: 'var(--border-radius)',
+            padding: '2.5rem',
+            boxShadow: '0 1px 6px rgba(13, 27, 42, 0.04)'
+          }}>
+            <div className="section-eyebrow" style={{ marginBottom: '0.5rem' }}>Scholarly Purpose</div>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.85rem', color: 'var(--text-primary)', marginBottom: '1.25rem', fontWeight: 700 }}>
+              Our Mission
+            </h2>
+            <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8', fontSize: '1rem', marginBottom: '1rem' }}>
+              This journal attempts to bring to academic focus the identity of the Malankara Church and
+              the genealogy of that identity. Following an <strong>interdisciplinary approach</strong>,
+              it interweaves predominantly historical and theological methodologies — but is not limited
+              to them alone. It will closely examine the Indian, Asian, and Semitic foundations upon which
+              this identity is constructed, as well as the contemporary manifestations and challenges of
+              its Christian being.
+            </p>
+            <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8', fontSize: '1rem' }}>
+              The very cultural and theological foundation of this identity liberates this project from
+              being narrowly confined to the ecclesial limits of the Malankara Church. Its enquiry
+              includes the rich and varied Christian life in the Semitic world — a geography spanning
+              ancient churches across Asia and North-eastern Africa — as well as the interaction of
+              these churches with global currents and historical forces.
+            </p>
           </div>
         </div>
 
@@ -192,27 +186,6 @@ function FeaturedGrid() {
             </div>
           </div>
 
-          {/* Recent Articles widget */}
-          {recentArticles.length > 0 && (
-            <div className="sidebar-widget">
-              <h4 className="sidebar-title">Recent Publications</h4>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', marginTop: '1.25rem' }}>
-                {recentArticles.map(art => (
-                  <Link key={art.id} to={`/article/${art.id}`} style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem', textDecoration: 'none', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.85rem' }}>
-                    <span style={{ fontSize: '0.7rem', color: 'var(--accent-secondary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                      {art.category}
-                    </span>
-                    <h5 style={{ fontFamily: 'var(--font-serif)', fontSize: '0.92rem', color: 'var(--text-primary)', lineHeight: '1.4', margin: 0 }}>
-                      {art.title}
-                    </h5>
-                    <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                      By {art.author}
-                    </span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
 
           {/* Journal Categories widget */}
           <div className="sidebar-widget">
