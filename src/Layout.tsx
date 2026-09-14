@@ -50,14 +50,17 @@ function Navbar() {
     <>
       <nav className="navbar">
         <div className="container nav-content">
-          <Link to="/" className="logo" onClick={closeAll}>
+          {/* Logo */}
+          <Link to="/" className="logo" onClick={closeAll} aria-label="SISC Home">
             <img src={logo} alt="SISC Logo" className="navbar-logo-img" />
+            <div className="logo-divider" aria-hidden="true" />
             <div className="logo-text-group">
               <span className="logo-title">SISC</span>
               <span className="logo-subtitle">Studies in Indo-Semitic Christianity</span>
             </div>
           </Link>
 
+          {/* Nav links */}
           <div className={`nav-links ${mobileMenuOpen ? 'mobile-active' : ''}`}>
             <Link to="/" className={active('/')} onClick={closeAll}>Home</Link>
 
@@ -67,12 +70,15 @@ function Navbar() {
                 className="nav-dropdown-trigger"
                 onClick={() => toggleDropdown('about')}
                 aria-expanded={openDropdown === 'about'}
+                role="button"
+                tabIndex={0}
+                onKeyDown={e => e.key === 'Enter' && toggleDropdown('about')}
               >
                 About
                 <span className={`dropdown-arrow ${openDropdown === 'about' ? 'open' : ''}`}>▼</span>
               </div>
               <div className="dropdown-menu">
-                <Link to="/about" onClick={closeAll}>About JSISC</Link>
+                <Link to="/about" onClick={closeAll}>About SISC</Link>
                 <Link to="/editorial-board" onClick={closeAll}>Editorial Board</Link>
                 <Link to="/contact" onClick={closeAll}>Contact the Editorial Office</Link>
               </div>
@@ -84,12 +90,16 @@ function Navbar() {
                 className="nav-dropdown-trigger"
                 onClick={() => toggleDropdown('browse')}
                 aria-expanded={openDropdown === 'browse'}
+                role="button"
+                tabIndex={0}
+                onKeyDown={e => e.key === 'Enter' && toggleDropdown('browse')}
               >
                 Browse Issues
                 <span className={`dropdown-arrow ${openDropdown === 'browse' ? 'open' : ''}`}>▼</span>
               </div>
               <div className="dropdown-menu">
                 <Link to="/archive" onClick={closeAll}>All Issues</Link>
+                <Link to="/browse" onClick={closeAll}>Browse Articles</Link>
               </div>
             </div>
 
@@ -99,6 +109,9 @@ function Navbar() {
                 className="nav-dropdown-trigger"
                 onClick={() => toggleDropdown('contributions')}
                 aria-expanded={openDropdown === 'contributions'}
+                role="button"
+                tabIndex={0}
+                onKeyDown={e => e.key === 'Enter' && toggleDropdown('contributions')}
               >
                 Contributions
                 <span className={`dropdown-arrow ${openDropdown === 'contributions' ? 'open' : ''}`}>▼</span>
@@ -109,22 +122,34 @@ function Navbar() {
               </div>
             </div>
 
-            {/* Contact Us inside mobile drawer */}
+            <Link to="/contact" className={active('/contact')} onClick={closeAll}>Contact</Link>
+
+            {/* Mobile-only CTA */}
             <div className="mobile-drawer-cta">
-              <Link to="/contact" className="btn btn-primary mobile-drawer-btn" onClick={closeAll}>
-                Contact Us
+              <Link to="/submit" className="btn btn-primary mobile-drawer-btn" onClick={closeAll}>
+                Submit Manuscript
               </Link>
             </div>
           </div>
 
+          {/* Actions */}
           <div className="nav-actions">
-            <Link to="/contact" className="btn btn-primary nav-subscribe-btn desktop-only-btn" onClick={closeAll}>
-              Contact Us
+            <Link
+              to="/browse"
+              className="nav-search-btn desktop-only-btn"
+              aria-label="Search articles"
+              onClick={closeAll}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
             </Link>
+
             <button
               className={`mobile-menu-toggle ${mobileMenuOpen ? 'active' : ''}`}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle Menu"
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={mobileMenuOpen}
             >
               <span></span>
               <span></span>
@@ -134,7 +159,7 @@ function Navbar() {
         </div>
       </nav>
 
-      {/* Overlay for mobile menu */}
+      {/* Mobile overlay */}
       {mobileMenuOpen && (
         <div className="mobile-nav-overlay" onClick={closeAll} aria-hidden="true" />
       )}
@@ -147,9 +172,11 @@ function Footer() {
     <footer>
       <div className="container">
         <div className="footer-content">
+          {/* Brand column */}
           <div className="footer-info">
             <div className="footer-logo">
               <img src={logo} alt="SISC Logo" className="footer-logo-img" />
+              <div className="footer-logo-divider" aria-hidden="true" />
               <div className="logo-text-group">
                 <span className="logo-title">SISC</span>
                 <span className="logo-subtitle">Studies in Indo-Semitic Christianity</span>
@@ -159,39 +186,54 @@ function Footer() {
               Advancing scholarship on Indo-Semitic Christianity, the Malankara Church,
               and Asian Christian heritage. Peer-reviewed. Open-access.
             </p>
-
           </div>
+
+          {/* Journal column */}
           <div className="footer-links">
-            <h4>Journals</h4>
+            <h4>Journal</h4>
             <ul>
-              <li><Link to="/journals">All Journals</Link></li>
-              <li><Link to="/editorial-board">Editorial Board</Link></li>
-              <li><Link to="/archive">Issues &amp; Archives</Link></li>
+              <li><Link to="/about">About the Journal</Link></li>
+              <li><Link to="/archive">Current Issue</Link></li>
+              <li><Link to="/archive">Archives</Link></li>
               <li><Link to="/browse">Browse Articles</Link></li>
             </ul>
           </div>
+
+          {/* Authors column */}
+          <div className="footer-links">
+            <h4>Authors</h4>
+            <ul>
+              <li><Link to="/submit">Submit Manuscript</Link></li>
+              <li><Link to="/authors">Author Guidelines</Link></li>
+              <li><Link to="/ethics">Ethics Policy</Link></li>
+            </ul>
+          </div>
+
+          {/* Resources column */}
           <div className="footer-links">
             <h4>Resources</h4>
             <ul>
-              <li><Link to="/authors">Instructions</Link></li>
-              <li><Link to="/ethics">Ethics</Link></li>
-              <li><Link to="/news">News &amp; Updates</Link></li>
-            </ul>
-          </div>
-          <div className="footer-links">
-            <h4>Support</h4>
-            <ul>
-              <li><Link to="/submit">Submit Manuscript</Link></li>
-              <li><Link to="/contact">Contact Us</Link></li>
-              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/editorial-board">Editorial Board</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
         </div>
+
         <div className="footer-bottom">
           <p>
-            © 2026 SISC Research Group. All rights reserved.<br />
-            Built by <a href="https://tenvix.org" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline' }}>Tenvix Technologies</a>
+            © 2026 Studies in Indo-Semitic Christianity (SISC). All rights reserved.
+            Built by{' '}
+            <a href="https://tenvix.org" target="_blank" rel="noopener noreferrer">
+              Tenvix Technologies
+            </a>.
           </p>
+          <div className="footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <span aria-hidden="true">|</span>
+            <a href="#">Terms of Use</a>
+            <span aria-hidden="true">|</span>
+            <Link to="/about">About</Link>
+          </div>
         </div>
       </div>
     </footer>

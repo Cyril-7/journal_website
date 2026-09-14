@@ -5,17 +5,17 @@ export default function AboutPage() {
   useSEO({
     title: 'About the Journal',
     description:
-      'Learn about the Studies in Indo-Semitic Christianity Journal — its mission, origins, editorial policy, and commitment to interdisciplinary open-access scholarship on the Malankara Church.',
+      'Learn about Studies in Indo-Semitic Christianity — its mission, origins, editorial policy, and commitment to interdisciplinary open-access scholarship on the Malankara Church.',
     keywords:
       'about SISC journal, Indo-Semitic Christianity mission, Malankara Church research, open access theology journal, Kerala Christian studies',
     canonical: '/about',
     structuredData: {
       '@context': 'https://schema.org',
       '@type': 'AboutPage',
-      name: 'About — Studies in Indo-Semitic Christianity Journal',
+      name: 'About — Studies in Indo-Semitic Christianity',
       url: 'https://jsisc.in/about',
       description:
-        'The SISC Journal is dedicated to interdisciplinary academic inquiry into Indo-Semitic Christianity, its identity, genealogy, and contemporary challenges.',
+        'Studies in Indo-Semitic Christianity is an interdisciplinary academic journal studying Indo-Semitic Christianity, its identity, genealogy, and contemporary challenges.',
       publisher: {
         '@type': 'Organization',
         name: 'SISC Research Group',
@@ -32,7 +32,7 @@ export default function AboutPage() {
           <div className="section-eyebrow">About the Journal</div>
           <h1 className="page-banner-title">About Us</h1>
           <p className="page-banner-sub">
-            An interdisciplinary academic inquiry into the identity, genealogy, and contemporary
+            An interdisciplinary academic journal studying the identity, genealogy, and contemporary
             challenges of one of humanity's most ancient Christian traditions.
           </p>
         </div>
@@ -46,7 +46,7 @@ export default function AboutPage() {
             <div className="about-mission-block" style={{ marginBottom: '2.5rem' }}>
               <h3>About the Journal</h3>
               <p>
-                <em>The Journal of Syriac and Indo-Semitic Christianity</em> is an interdisciplinary academic journal dedicated to the study of Christianity in India, Asia, and the wider Semitic world. It explores the historical, theological, cultural, and ecclesial traditions that have shaped Christian identity across these contexts, with particular attention to the Indian and Syriac Christian traditions.
+                <em>Studies in Indo-Semitic Christianity</em> is an interdisciplinary academic journal dedicated to the study of Christianity in India, Asia, and the wider Semitic world. It explores the historical, theological, cultural, and ecclesial traditions that have shaped Christian identity across these regions, with particular attention to the Indian and Syriac Christian traditions.
               </p>
               <p style={{ marginTop: '1rem' }}>
                 The journal seeks to examine the genealogy and contemporary expressions of Indo-Semitic Christianity, its relationship with West Syriac and other Asian Christian traditions, and the ways in which indigenous Christian identities have encountered, absorbed, resisted, and negotiated Western and Byzantine influences. It welcomes scholarship that critically engages questions of Christian identity, tradition, inculturation, ecclesiology, theology, history, liturgy, spirituality, culture, and the lived experience of Christian communities.

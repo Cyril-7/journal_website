@@ -139,48 +139,12 @@ export default function AuthorsPage() {
             {/* Review Timeline */}
             <div className="about-text-block" style={{ marginTop: '3.5rem' }}>
               <h3 className="about-block-title">Review Timeline</h3>
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                gap: '1.25rem',
-                marginTop: '1.25rem',
-              }}>
-                {[
-                  { stage: 'Initial Editorial Assessment', duration: 'Up to 4 weeks', desc: 'Scope check, quality threshold review' },
-                  { stage: 'Double-Blind Peer Review', duration: 'Up to 3 months', desc: 'Expert reviewer evaluation' },
-                  { stage: 'Revision Review', duration: 'Up to 1 month', desc: 'From date of resubmission' },
-                ].map(({ stage, duration, desc }) => (
-                  <div
-                    key={stage}
-                    style={{
-                      background: '#ffffff',
-                      border: '1.5px solid var(--border-subtle)',
-                      borderRadius: 'var(--border-radius)',
-                      padding: '1.5rem',
-                      borderTop: '4px solid var(--accent-primary)',
-                    }}
-                  >
-                    <span style={{
-                      display: 'block',
-                      fontSize: '0.72rem',
-                      fontWeight: 700,
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.5px',
-                      color: 'var(--text-muted)',
-                      marginBottom: '0.3rem',
-                    }}>{stage}</span>
-                    <span style={{
-                      display: 'block',
-                      fontFamily: 'var(--font-serif)',
-                      fontSize: '1.2rem',
-                      fontWeight: 700,
-                      color: 'var(--accent-primary)',
-                      marginBottom: '0.35rem',
-                    }}>{duration}</span>
-                    <span style={{ fontSize: '0.82rem', color: 'var(--text-secondary)' }}>{desc}</span>
-                  </div>
-                ))}
-              </div>
+              <p style={{ fontSize: '0.975rem', color: 'var(--text-secondary)', lineHeight: '1.85' }}>
+                Submitted manuscripts first undergo an initial editorial assessment (up to 4 weeks) for
+                scope fit and quality threshold. Papers that pass are sent to independent expert reviewers
+                under double-blind peer review (up to 3 months). If a revision is requested, the second
+                review takes up to 1 month from the date of resubmission.
+              </p>
             </div>
 
             {/* Copyright & Licensing */}

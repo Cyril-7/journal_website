@@ -13,9 +13,9 @@ export default function ContactPage() {
     structuredData: {
       '@context': 'https://schema.org',
       '@type': 'ContactPage',
-      name: 'Contact — Studies in Indo-Semitic Christianity Journal',
+      name: 'Contact — Studies in Indo-Semitic Christianity',
       url: 'https://jsisc.in/contact',
-      description: 'Contact the editorial board and administrative office of the Studies in Indo-Semitic Christianity Journal.',
+      description: 'Contact the editorial board and administrative office of Studies in Indo-Semitic Christianity.',
       publisher: {
         '@type': 'Organization',
         name: 'SISC Research Group',

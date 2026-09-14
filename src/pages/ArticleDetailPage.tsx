@@ -88,23 +88,23 @@ export default function ArticleDetailPage() {
 
   return (
     <>
-      {/* Formal Top Navigation bar */}
-      <div className="no-print" style={{ background: '#ffffff', borderBottom: '1px solid var(--border-mid)', padding: '2rem 0' }}>
+      {/* Breadcrumb */}
+      <div className="no-print" style={{ background: '#ffffff', borderBottom: '1px solid var(--border-subtle)', padding: '1rem 0', marginTop: '72px' }}>
         <div className="container">
-          <Link to="/browse" style={{ 
-            fontSize: '0.85rem', color: 'var(--text-secondary)', fontWeight: 500,
-            display: 'inline-flex', alignItems: 'center', gap: '0.4rem', textDecoration: 'none'
-          }}
-          onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent-primary)'}
-          onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}
-          >
-            &larr; Return to SISC Research Library
-          </Link>
+          <nav className="article-breadcrumb" aria-label="Breadcrumb">
+            <Link to="/">Home</Link>
+            <span aria-hidden="true">/</span>
+            <Link to="/browse">Browse Articles</Link>
+            <span aria-hidden="true">/</span>
+            <span style={{ color: 'var(--text-primary)', fontWeight: 500 }}>
+              {article.title.length > 55 ? article.title.slice(0, 55) + '…' : article.title}
+            </span>
+          </nav>
         </div>
       </div>
 
       {/* Main Page Layout */}
-      <section style={{ padding: '4rem 0', background: '#ffffff', fontFamily: 'var(--font-serif)' }}>
+      <section style={{ padding: '3.5rem 0 5rem', background: '#ffffff', fontFamily: 'var(--font-serif)' }}>
         <div className="container">
           <div className="article-detail-layout">
             
@@ -112,8 +112,8 @@ export default function ArticleDetailPage() {
             <div style={{ maxWidth: '800px' }}>
               
               {/* Journal Meta Header */}
-              <div style={{ fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '1.5px', color: 'var(--accent-secondary)', fontWeight: 600, marginBottom: '1rem' }}>
-                SISC Journal of Indo-Semitic Studies
+              <div style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: 'var(--accent-primary)', fontWeight: 700, marginBottom: '1.25rem', fontFamily: 'var(--font-body)' }}>
+                Studies in Indo-Semitic Christianity
               </div>
 
               {/* Manuscript Title */}

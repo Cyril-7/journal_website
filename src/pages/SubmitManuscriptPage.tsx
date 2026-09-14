@@ -15,7 +15,7 @@ export default function SubmitManuscriptPage() {
       '@type': 'WebPage',
       name: 'Submit Manuscript — SISC Academic Press',
       url: 'https://jsisc.in/submit',
-      description: 'Manuscript submission guidelines and instructions for Studies in Indo-Semitic Christianity Journal.',
+      description: 'Manuscript submission guidelines and instructions for Studies in Indo-Semitic Christianity.',
     },
   });
 

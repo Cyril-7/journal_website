@@ -11,7 +11,7 @@ interface SEOOptions {
   structuredData?: object;
 }
 
-const SITE_NAME = 'Studies in Indo-Semitic Christianity Journal';
+const SITE_NAME = 'Studies in Indo-Semitic Christianity';
 const BASE_URL = 'https://jsisc.in';
 const DEFAULT_IMAGE = `${BASE_URL}/og-image.png`;
 

@@ -187,7 +187,7 @@ export default function ArchivePage() {
 
   useSEO({
     title: 'All Issues | SISC Archive',
-    description: `Browse all ${totalIssues} issues and ${totalArticles} peer-reviewed articles published in the Studies in Indo-Semitic Christianity Journal.`,
+    description: `Browse all ${totalIssues} issues and ${totalArticles} peer-reviewed articles published in Studies in Indo-Semitic Christianity.`,
     keywords: 'SISC journal archive, Indo-Semitic Christianity issues, past volumes, journal archive India',
     canonical: '/archive',
     structuredData: {
@@ -201,23 +201,22 @@ export default function ArchivePage() {
   return (
     <>
       {/* Page Banner */}
-      <div className="page-banner" style={{ paddingTop: '7rem', paddingBottom: '3rem' }}>
+      <div className="page-banner">
         <div className="container">
-          <p className="section-eyebrow" style={{ marginBottom: '0.5rem' }}>SISC Academic Press</p>
+          <p className="section-eyebrow" style={{ marginBottom: '0.5rem' }}>SISC — Studies in Indo-Semitic Christianity</p>
           <h1 className="page-banner-title">All Issues</h1>
           <p className="page-banner-sub">
-            Complete archive of <em>Indo-Semitic Studies</em>. Browse by decade and year.
+            Complete archive of <em>Studies in Indo-Semitic Christianity</em>. Browse by year.
           </p>
-          <div style={{ display: 'flex', gap: '2.5rem', marginTop: '1.5rem', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: '2.5rem', marginTop: '1.5rem', flexWrap: 'wrap', borderTop: '1px solid var(--border-subtle)', paddingTop: '1.25rem' }}>
             {[
-              { label: 'E-ISSN', value: '2831-402X' },
-              { label: 'Frequency', value: 'Quarterly' },
+              { label: 'Frequency', value: '2 Issues per Year' },
               { label: 'Issues', value: String(totalIssues) },
               { label: 'Articles', value: String(totalArticles) },
             ].map((s) => (
               <div key={s.label}>
                 <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 700 }}>{s.label}</div>
-                <div style={{ fontSize: '1.1rem', color: 'var(--accent-primary)', fontWeight: 800, marginTop: '0.15rem' }}>{s.value}</div>
+                <div style={{ fontSize: '1.05rem', color: 'var(--accent-primary)', fontWeight: 700, marginTop: '0.15rem', fontFamily: 'var(--font-serif)' }}>{s.value}</div>
               </div>
             ))}
           </div>
@@ -225,12 +224,11 @@ export default function ArchivePage() {
       </div>
 
       {/* Archive Content */}
-      <section style={{ background: '#f5f5f7', minHeight: '60vh', padding: '3rem 0 5rem' }}>
+      <section style={{ background: '#ffffff', minHeight: '60vh', padding: '3rem 0 5rem' }}>
         <div className="container">
           <div className="archive-accordion-list">
             {decades.length === 0 ? (
               <div className="archive-empty">
-                <div style={{ fontSize: '2.5rem', marginBottom: '1rem', opacity: 0.25 }}>📂</div>
                 <h3>No Published Issues Yet</h3>
                 <p>The inaugural issue is in preparation. Check back soon.</p>
                 <Link to="/contact" className="btn btn-primary" style={{ marginTop: '1rem' }}>

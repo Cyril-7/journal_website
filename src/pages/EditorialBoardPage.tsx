@@ -1,11 +1,7 @@
 import React from 'react';
 import { useSEO } from '../useSEO';
 
-
 // ─── Editorial Board Data ─────────────────────────────────────────────────────
-// Each member includes all fields required by ISSN India guidelines:
-// Full Name, Designation, Complete Institutional Address, Institutional Email,
-// and Institutional Profile Link.
 
 interface BoardMember {
   role: string;
@@ -34,281 +30,99 @@ const editorialBoard: BoardMember[] = [
   },
   {
     role: 'Editorial Board Member',
-    name: 'Mr. Thomas Kuriakose PhD',
+    name: 'Mr. Thomas Kuriakose',
   }
 ];
 
-// ─── Sub-components ────────────────────────────────────────────────────────────
+// ─── Member Row ───────────────────────────────────────────────────────────────
 
-const roleBadgeColors: Record<string, string> = {
-  Patron: 'var(--accent-primary)',
-  'Editor-in-Chief': 'var(--accent-secondary)',
-  'Managing Editor': '#5c7a9e',
-  'Editorial Board Member': 'var(--text-muted)',
-  'International Editorial Board Member': '#3b7a57',
-};
-
-function MemberCard({ member }: { member: BoardMember }) {
-  const badgeColor = roleBadgeColors[member.role] ?? 'var(--text-muted)';
+function MemberRow({ member }: { member: BoardMember }) {
   const instValue = [member.department, member.institution].filter(Boolean).join(', ');
-  const hasDetails = Boolean(instValue || member.address || member.email || member.specialisation);
 
   return (
-    <div
-      style={{
-        background: '#ffffff',
-        border: '1.5px solid var(--border-subtle)',
-        borderRadius: 'var(--border-radius)',
-        padding: '2rem',
-        boxShadow: '0 4px 16px rgba(13,27,42,0.03)',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '0.9rem',
-        transition: 'var(--transition-smooth)',
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.transform = 'translateY(-3px)';
-        e.currentTarget.style.boxShadow = '0 10px 30px rgba(13,27,42,0.08)';
-        e.currentTarget.style.borderColor = 'var(--border-accent)';
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.transform = 'translateY(0)';
-        e.currentTarget.style.boxShadow = '0 4px 16px rgba(13,27,42,0.03)';
-        e.currentTarget.style.borderColor = 'var(--border-subtle)';
-      }}
-    >
-      {/* Role Badge */}
-      <span
-        style={{
-          display: 'inline-block',
-          alignSelf: 'flex-start',
-          background: `${badgeColor}18`,
-          color: badgeColor,
-          fontSize: '0.7rem',
-          fontWeight: 700,
-          letterSpacing: '0.8px',
-          textTransform: 'uppercase',
-          padding: '0.3rem 0.75rem',
-          borderRadius: '100px',
-          border: `1px solid ${badgeColor}40`,
-        }}
-      >
-        {member.role}
-      </span>
-
-      {/* Name */}
-      <div>
-        <h3
-          style={{
-            fontFamily: 'var(--font-serif)',
-            fontSize: '1.25rem',
-            color: 'var(--text-primary)',
-            fontWeight: 700,
-            margin: 0,
-            lineHeight: 1.3,
-          }}
-        >
-          {member.name}
-        </h3>
-        {member.designation && (
-          <p
-            style={{
-              margin: '0.3rem 0 0',
-              fontSize: '0.88rem',
-              fontWeight: 600,
-              color: 'var(--accent-secondary)',
-            }}
+    <div className="board-member-row">
+      <div className="board-member-name">{member.name}</div>
+      {member.designation && (
+        <div className="board-member-detail">{member.designation}</div>
+      )}
+      {instValue && (
+        <div className="board-member-detail">{instValue}</div>
+      )}
+      {member.address && (
+        <div className="board-member-detail">{member.address}</div>
+      )}
+      {member.email && (
+        <div className="board-member-detail" style={{ marginTop: '0.3rem' }}>
+          <a
+            href={`mailto:${member.email}`}
+            style={{ color: 'var(--accent-primary)', fontFamily: 'monospace', fontSize: '0.82rem', fontWeight: 600 }}
           >
-            {member.designation}
-          </p>
-        )}
-      </div>
-
-      {hasDetails && (
-        <>
-          {/* Divider */}
-          <hr style={{ border: 'none', borderTop: '1px solid var(--border-subtle)', margin: 0 }} />
-
-          {/* Details table */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-            {/* Institution */}
-            {instValue && (
-              <DetailRow
-                icon="🏛️"
-                label="Institution"
-                value={instValue}
-              />
-            )}
-
-            {/* Address */}
-            {member.address && <DetailRow icon="📍" label="Address" value={member.address} />}
-
-            {/* Email */}
-            {member.email && (
-              <div style={{ display: 'flex', gap: '0.6rem', alignItems: 'flex-start' }}>
-                <span style={{ fontSize: '0.9rem', marginTop: '1px', flexShrink: 0 }}>✉️</span>
-                <div>
-                  <span
-                    style={{
-                      display: 'block',
-                      fontSize: '0.68rem',
-                      fontWeight: 700,
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.6px',
-                      color: 'var(--text-muted)',
-                      marginBottom: '0.15rem',
-                    }}
-                  >
-                    Official Email
-                  </span>
-                  <a
-                    href={`mailto:${member.email}`}
-                    style={{
-                      fontSize: '0.85rem',
-                      color: 'var(--accent-primary)',
-                      fontFamily: 'monospace',
-                      fontWeight: 600,
-                      textDecoration: 'none',
-                    }}
-                    onMouseEnter={(e) => ((e.target as HTMLElement).style.textDecoration = 'underline')}
-                    onMouseLeave={(e) => ((e.target as HTMLElement).style.textDecoration = 'none')}
-                  >
-                    {member.email}
-                  </a>
-                </div>
-              </div>
-            )}
-
-            {/* Specialisation */}
-            {member.specialisation && (
-              <DetailRow icon="🔬" label="Specialisation" value={member.specialisation} />
-            )}
-          </div>
-        </>
+            {member.email}
+          </a>
+        </div>
       )}
-
-      {/* Profile Link */}
+      {member.specialisation && (
+        <div className="board-member-detail">
+          <em>Specialisation:</em> {member.specialisation}
+        </div>
+      )}
       {member.profileUrl && (
-        <a
-          href={member.profileUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            marginTop: '0.5rem',
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '0.4rem',
-            fontSize: '0.8rem',
-            fontWeight: 700,
-            color: 'var(--accent-secondary)',
-            textDecoration: 'none',
-            borderTop: '1px solid var(--border-subtle)',
-            paddingTop: '1rem',
-          }}
-          onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = 'var(--accent-primary)')}
-          onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = 'var(--accent-secondary)')}
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-            <polyline points="15 3 21 3 21 9" />
-            <line x1="10" y1="14" x2="21" y2="3" />
-          </svg>
-          View Institutional Profile
-        </a>
+        <div style={{ marginTop: '0.5rem' }}>
+          <a
+            href={member.profileUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ fontSize: '0.78rem', color: 'var(--accent-primary)', fontWeight: 600 }}
+          >
+            Institutional Profile →
+          </a>
+        </div>
       )}
     </div>
   );
 }
 
-function DetailRow({ icon, label, value }: { icon: string; label: string; value: string }) {
+// ─── Section ──────────────────────────────────────────────────────────────────
+
+function BoardSection({ title, members }: { title: string; members: BoardMember[] }) {
+  if (members.length === 0) return null;
   return (
-    <div style={{ display: 'flex', gap: '0.6rem', alignItems: 'flex-start' }}>
-      <span style={{ fontSize: '0.9rem', marginTop: '1px', flexShrink: 0 }}>{icon}</span>
-      <div>
-        <span
-          style={{
-            display: 'block',
-            fontSize: '0.68rem',
-            fontWeight: 700,
-            textTransform: 'uppercase',
-            letterSpacing: '0.6px',
-            color: 'var(--text-muted)',
-            marginBottom: '0.15rem',
-          }}
-        >
-          {label}
-        </span>
-        <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
-          {value}
-        </span>
+    <div style={{ marginBottom: '3.5rem' }}>
+      <div className="board-section-title">{title}</div>
+      <div className="board-grid-auto">
+        {members.map(m => <MemberRow key={m.name} member={m} />)}
       </div>
     </div>
   );
 }
 
-function SectionTitle({ children }: { children: React.ReactNode }) {
-  return (
-    <div style={{ marginBottom: '2rem' }}>
-      <div
-        style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '0.75rem',
-          marginBottom: '0.5rem',
-        }}
-      >
-        <div
-          style={{
-            width: '28px',
-            height: '3px',
-            background: 'var(--accent-primary)',
-            borderRadius: '2px',
-          }}
-        />
-        <h2
-          style={{
-            fontFamily: 'var(--font-serif)',
-            fontSize: '1.55rem',
-            fontWeight: 700,
-            color: 'var(--text-primary)',
-            margin: 0,
-          }}
-        >
-          {children}
-        </h2>
-      </div>
-    </div>
-  );
-}
-
-// ─── Main Page ─────────────────────────────────────────────────────────────────
+// ─── Main Page ────────────────────────────────────────────────────────────────
 
 export default function EditorialBoardPage() {
-  const allMembers = [...patronAndChief, ...managingEditors, ...editorialBoard];
-
   useSEO({
     title: 'Editorial Board',
     description:
-      'Meet the distinguished scholars on the SISC Journal Editorial Board — theologians, historians, and Syriac studies experts from leading institutions across India and abroad.',
+      'Meet the scholars on the SISC Journal Editorial Board — theologians, historians, and Syriac studies experts from leading institutions.',
     keywords:
       'editorial board, SISC journal editors, theology scholars, Syriac studies board, Malankara church scholars, academic journal India editorial',
     canonical: '/editorial-board',
     structuredData: {
       '@context': 'https://schema.org',
       '@type': 'WebPage',
-      name: 'Editorial Board — SISC Academic Press',
+      name: 'Editorial Board — Studies in Indo-Semitic Christianity',
       url: 'https://jsisc.in/editorial-board',
-      description: 'The SISC Journal editorial board comprises distinguished scholars in theology, history, and comparative religion from leading global institutions.',
+      description: 'The SISC Journal editorial board comprises distinguished scholars in theology, history, and comparative religion.',
     },
   });
 
+  const hasAnyMembers = patronAndChief.length + managingEditors.length + editorialBoard.length > 0;
 
   return (
     <>
       {/* Page Banner */}
       <div className="page-banner">
         <div className="container">
-          <div className="section-eyebrow">SISC Academic Press</div>
+          <div className="section-eyebrow">SISC — Studies in Indo-Semitic Christianity</div>
           <h1 className="page-banner-title">Editorial Board</h1>
           <p className="page-banner-sub">
             Our Editorial Board comprises distinguished scholars in theology, history, Syriac
@@ -320,38 +134,39 @@ export default function EditorialBoardPage() {
       {/* Board Content */}
       <section className="page-section" style={{ background: '#ffffff' }}>
         <div className="container">
-          {patronAndChief.length > 0 && (
-            <div style={{ marginBottom: '3rem' }}>
-              <SectionTitle>Patron &amp; Editor-in-Chief</SectionTitle>
-              <div className="board-grid-auto">
-                {patronAndChief.map((m) => (
-                  <MemberCard key={m.name} member={m} />
-                ))}
+          <div style={{ maxWidth: '760px' }}>
+            {hasAnyMembers ? (
+              <>
+                <BoardSection title="Patron &amp; Editor-in-Chief" members={patronAndChief} />
+                <BoardSection title="Managing Editor" members={managingEditors} />
+                <BoardSection title="Editorial Board Members" members={editorialBoard} />
+              </>
+            ) : (
+              <div style={{ padding: '2rem 0', color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: 1.7 }}>
+                <p>Editorial board information will be published upon the formal launch of the journal. Please check back soon.</p>
               </div>
-            </div>
-          )}
+            )}
 
-          {managingEditors.length > 0 && (
-            <div style={{ marginBottom: '3rem' }}>
-              <SectionTitle>Managing Editor</SectionTitle>
-              <div className="board-grid-auto">
-                {managingEditors.map((m) => (
-                  <MemberCard key={m.name} member={m} />
-                ))}
-              </div>
+            {/* Note */}
+            <div style={{
+              marginTop: '3rem',
+              padding: '1.5rem',
+              background: 'var(--clr-surface, #F2F1EE)',
+              borderLeft: '3px solid var(--accent-primary)',
+              fontSize: '0.875rem',
+              color: 'var(--text-secondary)',
+              lineHeight: 1.7
+            }}>
+              <strong style={{ display: 'block', marginBottom: '0.35rem', color: 'var(--text-primary)' }}>
+                Note on Completeness
+              </strong>
+              Full institutional profiles and affiliations for editorial board members will be published in accordance with ISSN guidelines upon the formal launch of the journal.
+              For editorial inquiries, please contact{' '}
+              <a href="mailto:contact@jsisc.in" style={{ color: 'var(--accent-primary)', fontWeight: 600 }}>
+                contact@jsisc.in
+              </a>.
             </div>
-          )}
-
-          {editorialBoard.length > 0 && (
-            <div style={{ marginBottom: '3rem' }}>
-              <SectionTitle>Editorial Board Members</SectionTitle>
-              <div className="board-grid-auto">
-                {editorialBoard.map((m) => (
-                  <MemberCard key={m.name} member={m} />
-                ))}
-              </div>
-            </div>
-          )}
+          </div>
         </div>
       </section>
     </>
