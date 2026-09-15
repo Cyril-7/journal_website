@@ -35,14 +35,13 @@ export default function SubmitManuscriptPage() {
       <section className="page-section" style={{ background: '#ffffff' }}>
         <div className="container">
           
-          <div className="main-layout" style={{ gridTemplateColumns: '1fr 340px' }}>
+          <div className="main-layout">
             {/* Left Column: Direct Submission Instructions */}
             <div className="content-area">
-              <div style={{
+              <div className="submit-card" style={{
                 background: 'var(--bg-surface)',
                 border: '1.5px solid var(--border-subtle)',
                 borderRadius: 'var(--border-radius)',
-                padding: '2.5rem',
                 boxShadow: '0 4px 20px rgba(13,27,42,0.03)'
               }}>
                 <div style={{ marginBottom: '1.75rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '1.25rem' }}>
@@ -114,7 +113,9 @@ export default function SubmitManuscriptPage() {
                         border: '1.5px solid var(--accent-primary-soft)',
                         borderRadius: 'var(--border-radius)',
                         padding: '1rem 1.25rem',
-                        display: 'inline-block'
+                        display: 'inline-block',
+                        maxWidth: '100%',
+                        wordBreak: 'break-all'
                       }}>
                         <span style={{ display: 'block', fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Official Submission Email</span>
                         <a
@@ -162,7 +163,7 @@ export default function SubmitManuscriptPage() {
 
                 </div>
 
-                <div style={{ marginTop: '2.5rem', paddingTop: '1.5rem', borderTop: '1px solid var(--border-subtle)', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                <div className="submit-actions" style={{ marginTop: '2.5rem', paddingTop: '1.5rem', borderTop: '1px solid var(--border-subtle)', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                   <a
                     href="mailto:contact@jsisc.in?subject=Manuscript%20Submission"
                     className="btn btn-primary"

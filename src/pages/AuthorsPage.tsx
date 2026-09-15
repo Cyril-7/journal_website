@@ -100,7 +100,7 @@ export default function AuthorsPage() {
               <h3 className="about-block-title" style={{ marginBottom: '2rem' }}>Submission Guidelines</h3>
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
                 gap: '1.5rem',
               }}>
                 {guidelines.map((g) => (

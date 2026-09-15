@@ -60,11 +60,10 @@ export default function ContactPage() {
         <div className="container">
 
           {/* Section 1: Editorial Board & General Inquiries */}
-          <div style={{
+          <div className="contact-info-card" style={{
             background: 'var(--bg-surface)',
             border: '1.5px solid var(--border-subtle)',
             borderRadius: 'var(--border-radius)',
-            padding: '2rem 2.5rem',
             marginBottom: '3rem',
             boxShadow: '0 2px 10px rgba(13,27,42,0.02)'
           }}>
@@ -87,14 +86,7 @@ export default function ContactPage() {
               For inquiries regarding thematic volumes, special editions, scholarly partnerships, or to contact the Editor-in-Chief directly.
             </p>
 
-            <dl className="contact-info-grid" style={{
-              display: 'grid',
-              gridTemplateColumns: 'auto 1fr',
-              gap: '0.75rem 2rem',
-              alignItems: 'baseline',
-              fontSize: '0.92rem',
-              margin: 0
-            }}>
+            <dl className="contact-info-grid">
               <dt style={{ fontWeight: 700, color: 'var(--text-primary)' }}>Corresponding Desk:</dt>
               <dd style={{ color: 'var(--text-secondary)', margin: 0 }}>Office of the Editor-in-Chief</dd>
 
@@ -111,7 +103,7 @@ export default function ContactPage() {
           </div>
 
           {/* Main Layout: Contact Form + Sidebar */}
-          <div className="main-layout" style={{ gridTemplateColumns: '1fr 340px' }}>
+          <div className="main-layout">
             
             {/* Form Column */}
             <div className="content-area">
@@ -139,11 +131,10 @@ export default function ContactPage() {
                   </button>
                 </div>
               ) : (
-                <div style={{
+                <div className="contact-form-card" style={{
                   background: '#ffffff',
                   border: '1.5px solid var(--border-subtle)',
                   borderRadius: 'var(--border-radius)',
-                  padding: '2.5rem',
                   boxShadow: '0 4px 20px rgba(13,27,42,0.03)'
                 }}>
                   <div style={{ marginBottom: '1.75rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '1rem' }}>

@@ -152,9 +152,24 @@ section {
 /* Two-column content + sidebar */
 .main-layout {
   display: grid;
-  grid-template-columns: 1fr 300px;
+  grid-template-columns: 1fr 340px;
   gap: 3rem;
   align-items: start;
+}
+
+.contact-info-card,
+.contact-form-card,
+.submit-card {
+  padding: 2.5rem;
+}
+
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem 2rem;
+  align-items: baseline;
+  font-size: 0.92rem;
+  margin: 0;
 }
 
 .content-area { min-width: 0; }
@@ -2042,6 +2057,32 @@ textarea:focus {
 
   /* Page banner */
   .page-banner { padding: 5.5rem 0 2.5rem; }
+
+  /* Contact & Submit Page Cards & Grids */
+  .contact-info-card,
+  .contact-form-card,
+  .submit-card {
+    padding: 1.5rem 1.25rem !important;
+  }
+
+  .contact-info-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.35rem !important;
+  }
+
+  .contact-info-grid dt {
+    margin-top: 0.65rem;
+  }
+
+  .submit-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .submit-actions .btn {
+    width: 100% !important;
+    text-align: center !important;
+  }
 }
 
 /* ============================================================
@@ -2056,5 +2097,11 @@ textarea:focus {
     font-size: 0.46rem;
     letter-spacing: 0.03em;
     max-width: 135px;
+  }
+
+  .contact-info-card,
+  .contact-form-card,
+  .submit-card {
+    padding: 1.25rem 0.85rem !important;
   }
 }
